@@ -1,0 +1,439 @@
+/**
+ * 
+ * @Author: 孙晓爽
+ * @Date:   2018-10-12
+ * @Last Modified by: 孙晓爽
+ * @Last Modified time: 2018-10-12
+ * 
+ */
+
+/**
+*中间所有方块
+*/
+
+/* 团队简介&荣耀简介&活动简介和更多字体 */
+
+#teamInfo .teamProfile,
+#gloryInfo .gloryProfile,
+#activityInfo .activityProfile {
+    margin-top: 40px;
+    /* width: 100%; */
+    width: 1230px;
+    font-size: 20px;
+    font-family: '微软雅黑';
+    color: #000000;
+}
+
+#teamInfo .teamProfile .teamProFont,
+#gloryInfo .gloryProfile .gloryProFont,
+#activityInfo .activityProfile .activityProFont {
+    margin-left: 0px;
+    font-weight: 550;
+}
+
+#teamInfo .teamProfile .moreFont,
+#gloryInfo .gloryProfile .moreFont,
+#activityInfo .activityProfile .moreFont {
+    float: right;
+    margin-top: -28px;
+    margin-right: 0px;
+}
+
+#teamInfo .teamProfile .moreFont a,
+#gloryInfo .gloryProfile .moreFont a,
+#activityInfo .activityProfile .moreFont a{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* 团队信息&荣耀信息&活动信息 */
+
+#teamInfo,
+#gloryInfo,
+#activityInfo {
+    width: 1230px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#teamInfo .cityBox,
+#gloryInfo .cityBox,
+#activityInfo .cityBox {
+    width: 200px;
+    height: 445px;
+    background: url('../img/index/infobg.jpg') no-repeat;
+    background-size: cover;
+    border-radius: 20px 20px 20px 20px;
+    margin-top: 20px;
+    float: left;
+
+}
+
+#teamInfo .cityBox p,
+#gloryInfo .cityBox p,
+#activityInfo .cityBox p {
+    font-size: 64px;
+    color: white;
+    text-align: center;
+    line-height: 84px;
+    letter-spacing: 30px;
+    padding-left: 35px;
+    padding-top: 50px;
+}
+
+#teamInfo .teamsInfoBox,
+#gloryInfo .glorysInfoBox,
+#activityInfo .activitysInfoBox {
+    width: 1030px;
+    float: left;
+    margin-top: 20px;
+    /* margin-left: 10px; */
+    overflow: hidden;
+}
+
+
+
+#teamInfo .teamsInfoBox .teamInfoBox,
+#gloryInfo .glorysInfoBox .gloryInfoBox,
+#activityInfo .activitysInfoBox .activityInfoBox {
+    width: 210px;
+    height: 210px;
+    border-radius: 15px 15px 15px 15px;
+    border: 15px solid #cacaca;
+    float: left;
+    margin-left: 47px;
+    background-color: #cacaca;
+    margin-bottom: 25px;
+}
+
+
+
+#teamInfo .teamsInfoBox .teamInfoBox img,
+#gloryInfo .glorysInfoBox .gloryInfoBox img,
+#activityInfo .activitysInfoBox .activityInfoBox img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+#teamInfo .teamsInfoBox .teamInfoBox img:hover,
+#gloryInfo .glorysInfoBox .gloryInfoBox img:hover,
+#activityInfo .activitysInfoBox .activityInfoBox img:hover{
+    animation: rotate .5s linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+#teamInfo .teamsInfoBox .teamInfoBox .teamBgbox,
+#gloryInfo .glorysInfoBox .gloryInfoBox .gloryBgbox,
+#activityInfo .activitysInfoBox .activityInfoBox .activityBgbox {
+    background: rgba(211, 211, 200, 0.5);
+    position: absolute;
+    z-index: 3;
+    height: 51px;
+    margin-top: -50px;
+    width: 180px;
+    display: none;
+    border-radius: 10px;
+}
+
+
+#teamInfo .teamsInfoBox .teamInfoBox .fp,
+#gloryInfo .glorysInfoBox .gloryInfoBox .fp,
+#activityInfo .activitysInfoBox .activityInfoBox .fp {
+    font-size: 14px;
+    font-family: '微软雅黑';
+    color: #000000;
+    line-height: 24px;
+    text-align: center;
+    display: block;
+    /* margin-top: -54px; */
+    /* display: none; */
+
+}
+
+
+#teamInfo .teamsInfoBox .teamInfoBox .tp,
+#gloryInfo .glorysInfoBox .gloryInfoBox .tp,
+#activityInfo .activitysInfoBox .activityInfoBox .tp {
+    font-size: 14px;
+    font-family: '微软雅黑';
+    color: #000000;
+    line-height: 10px;
+    text-align: center;
+    display: block;
+    /* display: none; */
+
+}
+
+@media screen and (max-width:1230px) {
+
+    /* 团队简介 */
+    #teamInfo .teamProfile,
+    #gloryInfo .gloryProfile,
+    #activityInfo .activityProfile {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 20px;
+        font-family: '微软雅黑';
+        color: #000000;
+    }
+
+    #teamInfo .teamProfile .teamProFont,
+    #gloryInfo .gloryProfile .gloryProFont,
+    #activityInfo .activityProfile .activityProFont {
+        margin-left: 0px;
+    }
+
+    #teamInfo .teamProfile .moreFont,
+    #gloryInfo .gloryProfile .moreFont,
+    #activityInfo .activityProfile .moreFont {
+        float: right;
+        margin-top: -27px;
+        margin-right: 0px;
+    }
+
+    #teamInfo,
+    #gloryInfo,
+    #activityInfo {
+        width: 992px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #teamInfo .cityBox,
+    #gloryInfo .cityBox,
+    #activityInfo .cityBox {
+        width: 160px;
+        height: 380px;
+        background: url('../img/index/infobg.jpg') no-repeat;
+        background-size: cover;
+        border-radius: 20px 20px 20px 20px;
+        margin-top: 10px;
+        float: left;
+    }
+
+    #teamInfo .cityBox p,
+    #gloryInfo .cityBox p,
+    #activityInfo .cityBox p {
+        font-size: 57px;
+        color: white;
+        text-align: center;
+        line-height: 73px;
+        letter-spacing: 30px;
+        padding-left: 30px;
+        padding-top: 45px;
+    }
+
+    #teamInfo .teamsInfoBox,
+    #gloryInfo .glorysInfoBox,
+    #activityInfo .activitysInfoBox {
+        width: 832px;
+        float: left;
+        margin-top: 8px;
+        overflow: hidden;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox,
+    #gloryInfo .glorysInfoBox .gloryInfoBox,
+    #activityInfo .activitysInfoBox .activityInfoBox {
+        width: 180px;
+        height: 180px;
+        border-radius: 10px 10px 10px 10px;
+        border: 15px solid #cacaca;
+        float: left;
+        margin-left: 28px;
+        margin-top: 1px;
+        margin-bottom: 20px;
+        background-color: #cacaca;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox img,
+    #gloryInfo .glorysInfoBox .gloryInfoBox img,
+    #activityInfo .activitysInfoBox .activityInfoBox img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .teamBgbox,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .gloryBgbox,
+    #activityInfo .activitysInfoBox .activityInfoBox .activityBgbox {
+        width: 150px;
+        height: 40px;
+        margin-top: -39px;
+        display: none;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .fp,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .fp,
+    #activityInfo .activitysInfoBox .activityInfoBox .fp {
+        font-size: 11px;
+        font-family: '微软雅黑';
+        color: #000000;
+        line-height: 10px;
+        margin-top: 5px;
+        /* font-weight: 550; */
+        display: block;
+        /* display: none; */
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .tp,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .tp,
+    #activityInfo .activitysInfoBox .activityInfoBox .tp {
+        font-size: 11px;
+        font-family: '微软雅黑';
+        color: #000000;
+        line-height: 10px;
+
+        /* font-weight: 550; */
+        display: block;
+        /* display: none; */
+    }
+
+
+}
+
+@media screen and (max-width:992px) {
+
+    /* 团队简介 */
+    #teamProfile,
+    #gloryProfile,
+    #activityProfile {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 15px;
+        font-family: '微软雅黑';
+        color: #000000;
+    }
+
+    #teamProfile .teamProFont,
+    #gloryProfile .gloryProFont,
+    #activityProfile .activityProFont {
+        margin-left: 0px;
+    }
+
+    #teamProfile .moreFont,
+    #gloryProfile .moreFont,
+    #activityProfile .moreFont {
+        float: right;
+        margin-top: -20px;
+        margin-right: 0px;
+    }
+
+    #teamInfo,
+    #gloryInfo,
+    #activityInfo {
+        width: 768px;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: -10px;
+    }
+
+    #teamInfo .cityBox,
+    #gloryInfo .cityBox,
+    #activityInfo .cityBox {
+        width: 130px;
+        height: 321px;
+        background: url('../img/index/infobg.jpg') no-repeat;
+        background-size: cover;
+        border-radius: 15px 15px 15px 15px;
+        margin-top: 5px;
+        float: left;
+
+    }
+
+    #teamInfo .cityBox p,
+    #gloryInfo .cityBox p,
+    #activityInfo .cityBox p {
+        font-size: 50px;
+        color: white;
+        text-align: center;
+        line-height: 62px;
+        letter-spacing: 30px;
+        padding-left: 33px;
+        padding-top: 35px;
+
+    }
+
+    #teamInfo .teamsInfoBox,
+    #gloryInfo .glorysInfoBox,
+    #activityInfo .activitysInfoBox {
+        width: 638px;
+        float: left;
+        margin-top: 0px;
+        /* margin-left: 7px; */
+        overflow: hidden;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox,
+    #gloryInfo .glorysInfoBox .gloryInfoBox,
+    #activityInfo .activitysInfoBox .activityInfoBox {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        border: 12px solid #cacaca;
+        float: left;
+        margin-left: 9px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        background-color: #cacaca;
+
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox img,
+    #gloryInfo .glorysInfoBox .gloryInfoBox img,
+    #activityInfo .activitysInfoBox .activityInfoBox img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .teamBgbox,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .gloryBgbox,
+    #activityInfo .activitysInfoBox .activityInfoBox .activityBgbox {
+        width: 126px;
+        height: 35px;
+        margin-top: -34px;
+        display: none;
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .fp,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .fp,
+    #activityInfo .activitysInfoBox .activityInfoBox .fp {
+        font-size: 6px;
+        font-family: '微软雅黑';
+        color: #000000;
+        line-height: 10px;
+        /* margin-top: -30px; */
+        /* display: none; */
+
+
+    }
+
+    #teamInfo .teamsInfoBox .teamInfoBox .tp,
+    #gloryInfo .glorysInfoBox .gloryInfoBox .tp,
+    #activityInfo .activitysInfoBox .activityInfoBox .tp {
+        font-size: 6px;
+        font-family: '微软雅黑';
+        color: #000000;
+        line-height: 3px;
+        /* display: none; */
+
+    }
+
+
+}

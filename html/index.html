@@ -1,0 +1,197 @@
+﻿<!--
+* @Author: 孙晓爽
+* @Date:   2018-10-12
+* @Last Modified by: 孙晓爽
+* @Last Modified time: 2018-10-12
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../public/public-slider/slider.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header"></header>
+    <!-- 头部区域END -->
+
+    <!-- 广告轮播 -->
+    <section id="main_ad" class="carousel slide wow fadeIn" data-ride="carousel"></section>
+    <!-- /广告轮播 -->
+
+    <!-- 团队信息 -->
+    <section id="teamInfo" class="wow fadeIn"></section>
+    <!-- 团队信息END -->
+
+    <!-- 荣耀信息 -->
+    <section id="gloryInfo" class="wow fadeIn"></section>
+    <!-- 荣耀信息END -->
+
+    <!-- 活动信息 -->
+    <section id="activityInfo" class="wow fadeIn"></section>
+    <!-- 活动信息END -->
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+    <!-- footer EDN -->
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-slider/slider.js"></script>
+<script src="../js/index.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    slider('#main_ad', 1);
+    $(function () {
+        //首页的AJAX交互
+        $.ajax({
+            async: true,
+            beforeSend: function () {},
+            complete: function () {},
+            type: "GET",
+            url: "/HomePage/HomePageContent",
+            dataType: "json",
+            success: function (data) {
+                var data = JSON.stringify(data);
+                data = JSON.parse(data);
+                dataChange(data);
+            },
+            error: function (data) {
+                console.log(data.status, data.statusText);
+            }
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //封装后台传来的数据进行的DOM操作
+        function dataChange(data) {
+            indexdata.indexSlider(data);
+            indexdata.indexTeam(data);
+            indexdata.indexHonor(data);
+        }
+        var indexdata = (function () {
+            //首页轮播图
+            function indexSlider(data) {
+                //获取到服务器json数组中的IndexSlider长度
+                var sliderNum = data.Index.IndexSlider.length;
+                //如果获取个数为0，则sliderNum = 1，保证创建一个
+                if (sliderNum < 1) {
+                    slider('#main_ad', 1);
+                    return false;
+                } else {
+                    //创建相应个数轮播图
+                    slider('#main_ad', sliderNum);
+                    //把获取到的值，替换img.src
+                    var img = $('#main_ad .item img');
+                    for (var k = 0; k < sliderNum; k++) {
+                        img[k].src = data.Index.IndexSlider[k].image;
+                    }
+                }
+            }
+
+            function indexTeam(data) {
+                //获取到所有的teamInfoBox
+                var teamInfoBox = $('#teamInfo .teamsInfoBox .teamInfoBox');
+                //利用循环对下面的图片链接等内容进行替换
+                //替换的个数由后台返回的team数据长度来决定
+                var teamNum = data.Index.team.length;
+                //判断数据长度，只能在0~8之间。只要前8条
+                if (teamNum <= 0) {
+                    alert('无数据！');
+                    return false;
+                } else {
+                    for (var i = 0; i < teamNum; i++) {
+                        teamInfoBox.eq(i).attr("index", data.Index.team[i].id);
+                        teamInfoBox.find("img").eq(i).attr('src', data.Index.team[i].TeamLogoAddress);
+                        teamInfoBox.find("img").eq(i).attr('alt', '' + data.Index.team[i].teamName +
+                            '团队LOGO');
+                        teamInfoBox.find(".fp").eq(i).text("团队名称：" + data.Index.team[i].teamName);
+                        var TeamSetupTime = timeChage(data.Index.team[i].TeamSetupTime);
+                        teamInfoBox.find(".tp").eq(i).text("成立时间：" + TeamSetupTime);
+                        if (i == 8) {
+                            window.event.returnValue = false;
+                        }
+                    }
+                }
+
+                //点击事件，用户点击团队logo向后台传输对应团队id
+                $('#teamInfo .teamsInfoBox .teamInfoBox a').on('click', function () {
+                    //拼接URL地址，传输团队的id值
+                    var index = $(this).parent().attr('index');
+                    var url = '/Team/TeamInfoSingle';
+                    window.location.href = url + '?index=' + index;
+                    window.event.returnValue = false;
+                });
+
+            }
+
+            function indexHonor(data) {
+                //获取到所有的gloryInfoBox
+                var gloryInfoBox = $('#gloryInfo .glorysInfoBox .gloryInfoBox');
+                var gloryNum = data.Index.honor.length;
+                if (gloryNum <= 0) {
+                    alert('无数据！');
+                    return false;
+                } else {
+                    for (var j = 0; j < gloryNum; j++) {
+                        gloryInfoBox.eq(j).attr("index", data.Index.honor[j].id);
+                        gloryInfoBox.find("img").eq(j).attr('src', data.Index.honor[j].HonorLogoAddress);
+                        gloryInfoBox.find("img").eq(j).attr('alt', '' + data.Index.honor[j].honorName +
+                            '荣耀LOGO');
+                        gloryInfoBox.find(".fp").eq(j).text("项目名称：" + data.Index.honor[j].honorName);
+                        var HonorSubmitTime = timeChage(data.Index.honor[j].HonorSubmitTime);
+                        gloryInfoBox.find(".tp").eq(j).text("完成时间：" + HonorSubmitTime);
+                        if (j == 8) {
+                            window.event.returnValue = false;
+                        }
+                    }
+                }
+
+                //点击事件，点击荣耀LOGO，传输对应的id值
+                $('#gloryInfo .glorysInfoBox .gloryInfoBox a').on('click', function () {
+                    //拼接URL地址，传输对应的荣耀id值
+                    var index = $(this).parent().attr('index');
+                    var url = '/SingleHonor/Index';
+                    window.location.href = url + '?index=' + index;
+                    window.event.returnValue = false;
+                });
+            }
+
+            function indexActivity() {}
+
+            function indexFooter() {}
+
+            return {
+                indexSlider: indexSlider,
+                indexTeam: indexTeam,
+                indexHonor: indexHonor,
+                indexActivity: indexActivity,
+                indexFooter: indexFooter
+            }
+        })();
+    });
+</script>
+
+</html>

@@ -1,0 +1,491 @@
+/**
+ * 公共样式
+ */
+
+/*------横线--------*/
+
+#hx {
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom-color: #000;
+   border-bottom-width: 1px;
+   background-color:#f4f4f4;
+   ;
+}
+
+@media (max-width: 994px) {
+   #hx {
+      width: 200px;
+   }
+}
+
+/*-----文本域------*/
+
+textarea {
+   width: 1030px;
+   height: 130px;
+   resize: none;
+   border-color: initial;
+   margin-left: 60px;
+   margin-top: 15px;
+   border-radius: 6px;
+}
+
+@media (max-width: 994px) {
+   textarea {
+      width: 600px;
+   }
+}
+
+@media (min-width: 994px) and (max-width:1200px) {
+   textarea {
+      width: 820px;
+   }
+}
+
+/*-----分割线------*/
+
+hr {
+   height: 1px;
+   border: none;
+   border-top: 1px solid #555;
+}
+
+/**
+ * 团队基本信息
+ */
+
+#teamInformation .caption {
+   margin-top: 30px;
+   font-size: 36px;
+   line-height: 80px;
+}
+
+#teamInformation .teamInfo .teamName,
+.teamType,
+.teamTeacher {
+   float: left;
+   font-size: 20px;
+   margin-top: 20px;
+}
+#teamInformation .teamleaderInfo .teamleader {
+   font-size: 22px;
+   margin-top: 20px;
+}
+
+/*第一行队长信息*/
+#teamInformation .teamleaderInfo .teamLeaderAccountSearch {
+   margin-left: 80px;
+   margin-right: 5px;
+   height: 35px;
+   margin-top: 20px;
+}
+#teamInformation .teamleaderInfo .btn{
+   width: 65px;
+   margin-top: 20px;
+}
+
+/*第一行队长信息*/
+
+#teamInformation .teamleaderInfo #lInfo .lNo,
+.lName,
+.lSex,
+.lGrade {
+   font-size: 20px;
+   margin-top: 20px;
+}
+
+#teamInformation .teamleaderInfo #lInfo,
+#lInfo2,
+#lInfo3 {
+   margin-left: 20px;
+}
+
+#teamInformation .teamleaderInfo #lInfo input {
+   width: 160px;
+}
+
+@media (max-width: 994px) {
+
+   #teamInformation .teamleaderInfo #lInfo .lNo,
+   .lName,
+   .lSex,
+   .lGrade {
+      width: 300px;
+      height: 30px;
+   }
+}
+
+/*第二行队长信息*/
+
+#teamInformation .teamleaderInfo #lInfo2 .lMajor,
+.lPhone,
+.lEmail {
+   font-size: 20px;
+   margin-top: 20px;
+   margin-right: 10px;
+   width: 360px;
+   height: 30px;
+}
+
+#teamInformation .teamleaderInfo #lInfo2 .lMajor input {
+   width: 225px;
+}
+
+#teamInformation .teamleaderInfo #lInfo2 .lPhone input,
+.lEmail input {
+   width: 270px;
+}
+
+/*第三行队长信息*/
+
+#teamInformation .teamleaderInfo #lInfo3 .lIntroduce {
+   font-size: 20px;
+   margin-top: 20px;
+}
+
+/**
+ * 团队成员情况
+ */
+#teamMember .member {
+   font-size: 22px;
+   margin-left: 18px;
+}
+
+#teamMember .userAccountSearch {
+   margin-left: 160px;
+   margin-right: 5px;
+   height: 35px;
+}
+
+#teamMember .mName {
+   margin-left: 80px;
+}
+
+#teamMember .mName,
+.mNo,
+.mSex,
+.mAge,
+.mMajor,
+.mPhone {
+   float: left;
+   font-size: 20px;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   padding-right: 110px;
+}
+
+/*12.24页面调整*/
+#teamMember{
+   overflow: hidden;
+}
+#teamMember .txts ul li {
+   float: left;
+}
+
+#teamMember .txts .txtName,
+.txtNo,
+.txtSex,
+.txtAge {
+   width: 120px;
+   height: 35px;
+   border: 1px solid rgb(144, 142, 142);
+   margin-right: 28px;
+   margin-bottom: 5px;
+   background-color: #fff;
+}
+
+#teamMember .txts .txtMajor,
+.txtPhone {
+   width: 160px;
+   height: 35px;
+   margin-right: 25px;
+   border: 1px solid rgb(144, 142, 142);
+   background-color: #fff;
+}
+
+#teamMember .txts .txtName {
+   margin-left: 50px;
+}
+
+/*添加 修改按钮*/
+#teamMember .btn {
+   width: 65px;
+}
+
+/*分隔线*/
+#fgx {
+   margin-left: 20px;
+   margin-top: 110px;
+   margin-bottom: 5px;
+   width: 95%;
+   border-top: 1px solid #333;
+   font-size: 20px;
+   color: #363636;
+}
+
+
+/**
+ * 团队项目情况
+ */
+
+#teamItem .item {
+   font-size: 22px;
+}
+
+#teamItem .itemDes,
+.itemPlan,
+.expectedRes {
+   font-size: 20px;
+   margin-left: 20px;
+   margin-top: 20px;
+}
+
+#teamItem textarea {
+   margin-left: 80px;
+}
+
+#teamItem .prompt {
+   font-size: 22px;
+   margin-top: 5px;
+}
+
+#teamItem hr {
+   border-top: 1px solid #B8B8B8;
+}
+
+/**
+ * 提交按钮
+ */
+#btn .btnBox {
+   text-align: center;
+}
+
+#btn .btnBox .btn {
+   width: 100px;
+   height: 40px;
+   font-size: 18px;
+   margin-bottom: 20px;
+}
+
+
+/**
+ * 媒体查询：屏幕992px-1200px
+ */
+@media(min-width:992px) and (max-width:1200px) {
+
+   /*专业方向、电话、邮箱*/
+   #teamInformation .teamleaderInfo #lInfo2 .lMajor,
+   .lPhone,
+   .lEmail {
+      width: 500px;
+      height: 30px;
+   }
+
+   #teamInformation .teamleaderInfo #lInfo2 .lPhone input,
+   .lEmail input {
+      width: 300px;
+   }
+
+   #teamInformation .teamleaderInfo #lInfo2 .lMajor input {
+      width: 265px;
+   }
+
+   /*成员情况*/
+   #teamMember .mName {
+      margin-left: 100px;
+   }
+
+   #teamMember .mName,
+   .mNo,
+   .mSex,
+   .mAge,
+   .mMajor,
+   .mPhone {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-right: 80px;
+   }
+
+   #teamMember .mMajor,
+   .mPhone {
+      padding-right: 48px;
+   }
+
+   /* 成员信息修改 */
+   #teamMember .txts .txtName {
+      margin-left: 75px;
+   }
+
+   #teamMember .txts .txtName,
+   .txtNo,
+   .txtSex,
+   .txtAge {
+      width: 105px;
+      height: 35px;
+      margin-right: 10px;
+   }
+
+   #teamMember .txts .txtMajor,
+   .txtPhone {
+      width: 125px;
+      height: 35px;
+      margin-right: 10px;
+   }
+
+   #teamMember .btn {
+      width: 80px;
+   }
+
+   #teamMember #fgx {
+      margin-left: 75px;
+      width: 90%;
+   }
+   #teamMember .userAccountSearch {
+      margin-left: 90px;
+   }
+   #teamInformation .teamleaderInfo .teamLeaderAccountSearch {
+      margin-left: 40px;
+   }
+}
+
+/**
+ * 媒体查询：屏幕992px以下
+ */
+@media (max-width: 992px) {
+   #teamMember .mName {
+      margin-left: 22px;
+   }
+   #teamMember .mName,
+   .mNo,
+   .mSex,
+   .mAge,
+   .mMajor,
+   .mPhone {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-right: 58px;
+   }
+
+   #teamMember .mMajor,.mPhone {
+      padding-right: 48px;
+   }
+
+   #teamMember .txts .txtName {
+      margin-left: 0px;
+   }
+
+   #teamMember .txts .txtName,
+   .txtNo,
+   .txtSex,
+   .txtAge {
+      width: 85px;
+      height: 35px;
+      margin-right: 10px;
+   }
+
+   #teamMember .txts .txtMajor,
+   .txtPhone {
+      width: 110px;
+      height: 35px;
+      margin-right: 10px;
+   }
+
+   #teamMember .btn {
+      width: 73px;
+   }
+
+   #teamMember #fgx {
+      margin-left: 0px;
+      width: 95%;
+   }
+   #teamMember .userAccountSearch {
+      margin-left: 130px;
+   }
+   #teamInformation .teamleaderInfo .teamLeaderAccountSearch {
+      margin-left: 40px;
+   }
+}
+
+/**
+ * 媒体查询：屏幕768px-992px
+ */
+@media(min-width:768px) and (max-width:992px) {
+   #teamMember .mName {
+      margin-left: 80px;
+   }
+   #teamMember .mName,
+   .mNo,
+   .mSex,
+   .mAge,
+   .mMajor,
+   .mPhone {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-right: 45px;
+   }
+
+   #teamMember .mMajor,.mPhone {
+      padding-right: 45px;
+   }
+   /* 成员信息修改 */
+   #teamMember .txts .txtName {
+      margin-left: 55px;
+   }
+
+   #teamMember .txts .txtName,
+   .txtNo,
+   .txtSex,
+   .txtAge {
+      width: 85px;
+      height: 35px;
+      margin-right: 5px;
+   }
+
+   #teamMember .txts .txtMajor,
+   .txtPhone {
+      width: 105px;
+      height: 35px;
+      margin-right: 5px;
+   }
+
+   #teamMember .btn {
+      width: 80px;
+   }
+
+   #teamMember #fgx {
+      margin-left: 50px;
+      width: 95%;
+   }
+}
+
+/**
+ * 媒体查询：屏幕768px以下
+ */
+@media(max-width:768px){
+   .container{
+      width: 768px;
+   }
+   #teamMember .txts .txtName,
+   .txtNo,
+   .txtSex,
+   .txtAge {
+      width: 95px;
+      height: 35px;
+      margin-right: 5px;
+   }
+   #teamMember .txts .txtMajor,
+   .txtPhone {
+      width: 115px;
+      height: 35px;
+      margin-right: 5px;
+   }
+
+   #teamMember .btn {
+      width: 60px;
+   }
+   #teamInformation .teamleaderInfo .btn {
+      margin-top: -5px;
+  }
+}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>honorCommit</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../css/honorCommit.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!--头部区域-->
+    <header id="header"></header>
+    <!--头部区域-->
+
+    <!--学院标识区域-->
+    <section id="schoolMark" class="wow fadeIn">
+        <div class="container">
+            <div class="row col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="collegeName ">
+                    <!--这是旁边的小Logo-->
+                    <img src="../public/public-img/LOGO.jpg" class="img-responsive" alt="Cinque Terre" width="50"
+                        height="50">
+                    <p>团队管理平台</p>
+                </div>
+            </div>
+            <div class="honorName col-sm-12 col-lg-12 col-md-12 col-xs-12">
+                <p>大学生创新创业孵化基地团队荣耀提交表</p>
+            </div>
+        </div>
+    </section>
+    <!--学院标识区域-->
+
+    <!--团队介绍-->
+    <section id="teamInformation" class="wow fadeIn">
+        <!--包括荣耀名称，指导教师，网络连接，和荣耀简介-->
+        <div class="container">
+            <div class="row">
+                <div class="honorName">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="honorNametext" class="col-lg-2 col-lg-offset-3 col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3">荣耀名称：</label>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <input type="text" class="form-control" id="honorNametext" placeholder="请填写荣耀名称">
+                            </div>
+                            <label for="teacherNametext" class="col-lg-2 col-lg-offset-3 col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-3">指导教师：</label>
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                                <input type="text" class="form-control" id="teacherNametext" placeholder="请填写指导教师">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="honorLinkAndTeam">
+                    <form class="form-inline">
+                        <div class="form-group honorLink">
+                            <label for="honorLinktext" class="col-lg-7 col-lg-push-5 col-md-7 col-md-push-4 col-sm-7 col-sm-push-1 col-xs-12">网络连接：</label>
+                            <div class="col-lg-3 col-lg-push-2 col-md-3 col-md-push-1 col-sm-3 col-sm-pull-2 col-xs-12">
+                                <input type="text" class="form-control" id="honorLinktext" placeholder="请填写网络连接地址">
+                            </div>
+                        </div>
+                        <form class="form-inline">
+                            <div class="form-group honorTeam">
+                                <label for="belongTeamtext" class="col-lg-6 col-lg-pull-12 col-md-6 col-md-push-12 col-sm-6 col-sm-push-6 col-xs-12">所属团队：</label>
+                                <div class="col-lg-4 col-lg-pull-10 col-md-4 col-md-push-10 col-sm-4 col-sm-push-4 col-xs-12">
+                                    <input type="text" class="form-control" id="belongTeamtext" placeholder="请填写团队名称">
+                                </div>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="honorIntroduce">
+                    <div class="form-group">
+                        <label for="honorIntroducetext" class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-2">荣耀简介：</label>
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                            <textarea type="text" class="form-control" id="honorIntroducetext" placeholder="请填写荣耀简介"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--团队介绍-->
+
+    <!--技术标识-->
+    <section id="technologyIntroduce" class="wow fadeIn">
+        <div class="container tlyIntroduce">
+            <!--container里面技术介绍的类名-->
+            <div class="title">
+                <!--技术标识标题和技术复选框-->
+                <div class="name-group">
+                    <label for="name" class="control-label">技术标识:</label>
+                    <input type="text" class="form-control content" id="technologyText" placeholder="具体的技术填写在这里哟,技术间请用逗号分隔!">
+                </div>
+                <!--复选框-->
+                <div class="select">
+                    <ul>
+                        <li>
+                            <p class="checkbox"><label><input type="checkbox" value="前端">前端</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="后端">后端</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="运维">运维</label></p>
+                        </li>
+                        <li>
+                            <p class="checkbox"><label><input type="checkbox" value="数据库">数据库</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="服务器">服务器</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="互联网">互联网</label></p>
+                        </li>
+                        <li>
+                            <p class="checkbox"><label><input type="checkbox" value="移动开发">移动开发</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="人工智能">人工智能</label></p>
+                            <p class="checkbox"><label><input type="checkbox" value="游戏开发">游戏开发</label></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--技术标识-->
+
+    <!--团队成员-->
+    <section id="teamMembers" class="wow fadeIn">
+        <div class="container teamMember">
+            <div class="title">参与成员</div>
+            <div class="isMember">
+                <!--本团队成员信息-->
+                <div class="search">
+                    <!--搜索栏-->
+                    <p>本团队:</p>
+                    <div class="schMember">
+                        <input type="text" class="form-control content schMemberIpt" placeholder="搜索本地学号添加">
+                        <button class="btn btn-info active schMemberBtn">搜索</button>
+                    </div>
+                </div>
+                <div class="message" id="Message">
+                    <ul class="active">
+                        <li>
+                            <label for="name" class="control-label">姓名:</label>
+                            <input type="text" class="form-control content" id="name" readonly="readonly">
+                        </li>
+                        <li>
+                            <label for="name" class="control-label">学号:</label>
+                            <input type="text" class="form-control content" id="num" readonly="readonly">
+                        </li>
+                        <li>
+                            <label for="name" class="control-label">手机:</label>
+                            <input type="text" class="form-control content" id="identity" readonly="readonly">
+                        </li>
+                        <li class="btn"><button class="btn btn-info active addBtn">添加</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nonMember">
+                <!--非本团队成员信息-->
+                <div class="non">
+                    <p>非本团队:</p>
+                </div>
+                <div class="name-group">
+                    <label for="name">成员姓名:</label>
+                    <input type="text" class="form-control content" id="name" placeholder="名字间请用逗号分割">
+                </div>
+            </div>
+            <div class="editMit">
+                <!--提交-->
+                <button class="btn btn-info btn-md editMitBtn">提交</button>
+            </div>
+        </div>
+    </section>
+    <!--团队成员-->
+
+    <!--脚注区域-->
+    <footer id="footer" class="Footer"></footer>
+    <!--脚注区域-->
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../js/honorCommit.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    //改变导航默认状态
+    navEven('荣耀申请');
+    $(function () {
+        //在成员搜索框点击回车键，调用搜索事件
+        $('#teamMembers .teamMember .isMember .search .schMemberIpt').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#teamMembers .teamMember .isMember .search .schMember .schMemberBtn').click();
+            }
+        });
+
+        //搜索本团队的成员
+        $('#teamMembers .teamMember .isMember .search .schMember .schMemberBtn').on('click', function () {
+            var number = $('#teamMembers .teamMember .isMember .search .schMember .schMemberIpt').val();
+            var numberReg = /^\d{9}$/;
+            var numberFlag = numberReg.test(number);
+            if (!numberFlag) {
+                alert('学号格式错误，请检查！');
+                return false;
+            }
+            //搜索学号返回数据的AJAX交互
+            $.ajax({
+                async: true,
+                beforeSend: function () {},
+                complete: function () {},
+                url: "/HonorSubmit/SearchAccount",
+                type: "POST",
+                data: {
+                    userAccount: number
+                },
+                dataType: "json",
+                success: function (data) {
+                    var data = JSON.stringify(data);
+                    data = JSON.parse(data);
+                    //调用函数，把返回来的文本插入到页面上
+                    if (data.status == "no") {
+                        alert(data.result);
+                    } else {
+                        initPlayer(data);
+                    }
+                },
+                error: function (data) {
+                    console.log(data.status, data.statusText);
+                }
+            });
+        });
+        //封装函数，把返回的文本插入到页面中
+        function initPlayer(data) {
+            $('#Message>.active li #num').attr('index', data.UserId);
+            $('#Message>.active li #name').val(data.Name);
+            $('#Message>.active li #num').val(data.Account);
+            $('#Message>.active li #identity').val(data.Phone);
+        }
+
+        // 定义一个object类型的变量
+        var honorCommit = new Object();
+        //点击提交，进行总的数据发送，AJAX交互
+        $('#teamMembers .teamMember .editMit .editMitBtn').on('click', function () {
+            //定义存放成员学号的数组
+            var arr = new Array();
+            //获取包括着学号的p元素集合
+            var changeNumber = $('#teamMembers .isMember .moify li #num');
+            //循环遍历集合
+            for (var i = 0; i < changeNumber.length; i++) {
+                //把每一个集合中的index(用户id)放进数组中
+                arr.push(changeNumber.eq(i).attr('index'));
+            }
+            //用逗号分隔文本，然后赋值给userNumberList
+            var userNumberList = arr.join(',');
+            //---------------------------------------------------------------分隔线分隔线---------------------------
+            //定义存放技术标识的数组
+            var technologyArr = new Array();
+            //获取选中的元素
+            var checkBox = $('#technologyIntroduce .tlyIntroduce .title .select ul input');
+            //循环遍历集合
+            for (var j = 0; j < checkBox.length; j++) {
+                if (checkBox.eq(j).is(':checked') == true) {
+                    technologyArr.push(checkBox.eq(j).val());
+                }
+            }
+            //用逗号分隔文本
+            var checkBoxList = technologyArr.join(',');
+            //获取文本框中的标识
+            var checkBoxText = $(
+                '#technologyIntroduce .tlyIntroduce .title .name-group #technologyText').val();
+            //拼接两者的数据，组成一个完整的数据
+            var completeData = checkBoxList + "," + checkBoxText;
+            //---------------------------------------------------------------分隔线分隔线---------------------------
+            //定义AJAX要传输的json数据
+            honorCommit.HonorName = $('#teamInformation .honorName #honorNametext').val();
+            honorCommit.guidTeacher = $('#teamInformation .honorName #teacherNametext').val();
+            honorCommit.NetConnect = $('#teamInformation .honorLinkAndTeam .honorLink #honorLinktext').val();
+            honorCommit.HonorTeam = $('#teamInformation .honorLinkAndTeam .honorTeam #belongTeamtext').val();
+            honorCommit.HonorIntroduce = $('#teamInformation .honorIntroduce #honorIntroducetext').val();
+            honorCommit.TechnicalType = completeData;
+            honorCommit.NonMember = $('#teamMembers .teamMember .nonMember #name').val();
+            honorCommit.userAccount = userNumberList;
+            //AJAX交互
+            $.ajax({
+                async: true,
+                url: "/HonorSubmit/AddHonor",
+                type: "POST",
+                data: {
+                    honorCommitJson: JSON.stringify(honorCommit)
+                },
+                dataType: "json",
+                success: function (data) {
+                    var data = JSON.stringify(data);
+                    data = JSON.parse(data);
+                    if (data.status == 'ok') {
+                        alert('数据提交成功');
+                        //数据提交成功就重载页面，防止用户重复提交
+                        window.location.href = "/HonorSubmit/Index";
+                    } else {
+                        alert('数据提交失败');
+                    }
+                },
+                error: function (data) {
+                    console.log(data.status, data.statusText);
+                }
+            });
+        });
+
+    });
+</script>
+
+</html>

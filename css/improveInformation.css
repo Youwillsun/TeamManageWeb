@@ -1,0 +1,518 @@
+/**
+* @name：完善信息
+* @author：孙晓爽
+* @date：2018-10-30
+* @version：1.0
+*/
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input {
+    margin: 0;
+    padding: 0;
+}
+
+aaa body {
+    font-size: 12px;
+}
+
+img {
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+input, select, textarea {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    border-color: #000;
+}
+
+/* 清除浮动 */
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* 所有完善按钮 */
+
+.allContent .nav-tabs {
+    border-bottom: none;
+}
+
+.allContent ul {
+    height: 60px;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.allContent ul li {
+    width: 33%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.allContent ul li .perInfo a {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
+
+/* 中间内容区域 */
+
+.allContent .tab-content .preTeamInfo {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.allContent .tab-content .preTeamInfo .container {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+/* 团队简介 */
+
+.allContent .tab-content .preTeamInfo .teamProfile {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.allContent .tab-content .preTeamInfo .teamProfile textarea {
+    width: 53%;
+    height: 150px;
+    margin-top: 10px;
+    resize: none;
+    font-size: 20px;
+    color: black;
+    font-family: '楷体';
+}
+
+.allContent .tab-content .preTeamInfo .teamProfile button {
+    margin-top: 5px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* 团队主打 */
+
+.allContent .tab-content .preTeamInfo .teamSign {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.allContent .tab-content .preTeamInfo .teamSign textarea {
+    width: 53%;
+    height: 150px;
+    margin-top: 10px;
+    resize: none;
+    font-size: 20px;
+    color: black;
+    font-family: '楷体';
+}
+
+.allContent .tab-content .preTeamInfo .teamSign button {
+    margin-top: 5px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* 上传LOGO图片 */
+
+.allContent .tab-content .preTeamInfo .upLoadLog {
+    float: right;
+    margin-top: -330px;
+    margin-right: 20px;
+    text-align: center;
+    width: 13.5%;
+    height: calc(193px-10px);
+}
+
+.allContent .tab-content .preTeamInfo .upLoadLog button {
+    margin-top: 8px;
+    width: 94px;
+}
+
+.preTeamInfo .upLoadLog .upLog {
+    width: 150px;
+    height: 150px;
+    background-color: #f8f8f8;
+    background-size: cover;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+/* 配置轮播图 */
+
+.allContent .tab-content .preTeamInfo .teamSlide {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.allContent .tab-content .preTeamInfo .teamSlide .slidePicture {
+    width: 900px;
+    height: 300px;
+    margin: 30px auto;
+    background-color: #f8f8f8;
+    background-size: cover;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+/* .allContent .tab-content .preTeamInfo .teamSlide .slidePicture img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+/* 选择图片、上传图片按钮 */
+
+.allContent .tab-content .preTeamInfo .selUpBtn .btnPicture {
+    text-align: center;
+}
+
+/* 底部重新上传 */
+
+.allContent .tab-content .preTeamInfo .againUpLoad {
+    width: 78%;
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.allContent .tab-content .preTeamInfo .againUpLoad .smallSlideFirst, .smallSlideSecond, .smallSlideThird, .smallSlideFour, .smallSlideFive {
+    width: 17%;
+    height: 53px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.allContent .tab-content .preTeamInfo .againUpLoad img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.allContent .tab-content .preTeamInfo .againUpLoad button {
+    margin-top: 10px;
+}
+
+.allContent .tab-content .preTeamInfo .teamSubmit {
+    margin-right: 12px;
+    margin-bottom: 15px;
+}
+
+@media(max-width:992px) {
+    .preTeamInfo .upLoadLog .upLog {
+        width: 100px;
+        height: 100px;
+    }
+    .allContent .tab-content .preTeamInfo .upLoadLog button {
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .allContent .tab-content .preTeamInfo .teamSlide .slidePicture {
+        width: 711px;
+        height: 237px;
+    }
+}
+
+@media(max-width:768px) {
+    /* .allContent .tab-content .preTeamInfo .upLoadLog button {
+        width: 80px;
+        height: 34px;
+        font-size: 4px;
+    } */
+    .allContent {
+        width: 768px;
+    }
+}
+
+/* 完善团队信息 END */
+
+/* 完善荣耀信息 */
+
+/* 中间内容区域 */
+
+.allContent .tab-content .preGloryInfo {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.allContent .tab-content .preGloryInfo .container {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+/* 荣耀简介 */
+
+/* 上传LOGO图片 */
+
+.allContent .tab-content .preGloryInfo .upLoadLog {
+    width: 13.5%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.allContent .tab-content .preGloryInfo .upLoadLog button {
+    margin-top: 8px;
+    width: 94.46px;
+}
+
+.allContent .tab-content .preGloryInfo .upLoadLog .upLog {
+    width: 150px;
+    height: 150px;
+    background-color: #f8f8f8;
+    background-size: cover;
+    border: 1px solid #ccc;
+    cursor: move;
+    margin-top: 10px;
+}
+
+/* .allContent .tab-content .preGloryInfo .upLoadLog .upLog img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+/* 配置轮播图 */
+
+.allContent .tab-content .preGloryInfo .glorySlide {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.allContent .tab-content .preGloryInfo .glorySlide .slidePicture {
+    width: 900px;
+    height: 300px;
+    margin: 30px auto;
+    background-color: #f8f8f8;
+    background-size: cover;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+/* .allContent .tab-content .preGloryInfo .glorySlide .slidePicture img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+/* 选择图片、上传图片按钮 */
+
+.allContent .tab-content .preGloryInfo .selUpBtn .btnPicture {
+    text-align: center;
+}
+
+/* 底部重新上传按钮 */
+
+.allContent .tab-content .preGloryInfo .againUpLoad {
+    width: 78%;
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.allContent .tab-content .preGloryInfo .againUpLoad .smallSlideFirst, .smallSlideSecond, .smallSlideThird, .smallSlideFour, .smallSlideFive {
+    width: 17%;
+    height: 53px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.allContent .tab-content .preGloryInfo .againUpLoad img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.allContent .tab-content .preGloryInfo .againUpLoad button {
+    margin-top: 10px;
+}
+
+.allContent .tab-content .preGloryInfo .glorySubmit {
+    margin-right: 12px;
+    margin-bottom: 15px;
+}
+
+@media(max-width:993px) {
+    .preGloryInfo .upLoadLog .upLog {
+        width: 100px;
+        height: 100px;
+    }
+    .allContent .tab-content .preGloryInfo .upLoadLog button {
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+    .allContent .tab-content .preGloryInfo .glorySlide .slidePicture {
+        width: 711px;
+        height: 237px;
+    }
+}
+
+@media(max-width:768px) {
+    /* .allContent .tab-content .preGloryInfo .upLoadLog button {
+        width: 65px;
+        height: 34px;
+        font-size: 4px;
+    } */
+}
+
+/* 完善荣耀信息 END */
+
+/* 遮罩层样式 */
+.teamHonorAll{
+    position: absolute;
+    top:2px;
+    left: 35%;
+    width: 570px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: none;
+    z-index: 101;
+}
+.teamHonorAll .thaBox{
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.teamHonorAll .thaBox .thaTitle{
+    width: 100%;
+    height: 40px;
+    color: #000;
+    font-size: 20px;
+    font-family: "楷体";
+    border-bottom: #000 1px solid;
+    line-height: 40px;
+}
+.teamHonorAll .thaBox table>thead>tr>td{
+    font-size: 15px;
+    font-weight: bold;
+}
+#bgDiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 2, 0.2);
+    display: none;
+    z-index: 100;
+}
+
+
+
+/* 这些是迁移了样式之后新加的文件上传的样式 */
+.allContent .preGloryInfo .gloryFile{
+    height: 260px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.allContent .preGloryInfo .gloryFile .gloryFileBox{
+    text-align: center;
+    margin-top: 18px;
+    margin-left: 27%;
+}
+
+.allContent .preGloryInfo .gloryFile .upload {
+    width: 23%;
+    float: left;
+    height: 280px;
+}
+
+.allContent .preGloryInfo .gloryFile .upload>.groupImage {
+    width: 172px;
+    height: 172px;
+    margin: 10px auto;
+    background-color: oldlace;
+}
+.allContent .preGloryInfo .gloryFile .upload{
+   background-color: #fff;
+   border: 1px solid #ccc;
+   border-radius: 15px;
+   height: 200px;
+   margin-top: 10px;
+}
+.allContent .preGloryInfo .gloryFile .upload>h3{
+    margin-top: 15px;
+    text-align: center;
+}
+.allContent .preGloryInfo .gloryFile .upload>button {
+   width: 135px;
+   height: 45px;
+   border-radius: 30px;
+   font-size: 18px;
+   outline: none;
+}
+.allContent .preGloryInfo .gloryFile .upload>.selectBtn{
+   margin-top: 15px;
+}
+.allContent .preGloryInfo .gloryFile .upload>.fileNameBox{
+   width: 100%;
+   height: 45px;
+}
+
+/*是否提供下载 */
+
+.allContent .preGloryInfo .gloryFile .download {
+    width: 22%;
+    float: left;
+    padding-top: 20px;
+    height: 220px;
+    margin-left: 15%;
+}
+
+.allContent .preGloryInfo .gloryFile .download p {
+    width: 90%;
+    font-size: 20px;
+    margin: 30px auto;
+}
+
+.allContent .preGloryInfo .gloryFile .download .select {
+    width: 50%;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+/* 文件上传模块的媒体查询样式 */
+@media(max-width:993px){
+    /* LOGO区 */
+    .allContent .tab-content .preGloryInfo .upLoadLog {
+        width: 21.5%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    /* 文件区 */
+    .allContent .preGloryInfo .gloryFile .gloryFileBox {
+        margin-left: 18%;
+    }
+    .allContent .preGloryInfo .gloryFile .upload {
+        width: 33%;
+    }
+    .allContent .preGloryInfo .gloryFile .download {
+        width: 28%;
+        margin-left: 10%;
+    }
+}

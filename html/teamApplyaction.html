@@ -1,0 +1,400 @@
+﻿<!--
+* @Author: 陈湘云
+* @Date:   2018-10-13 23:34:39
+* @Last Modified by:   陈湘云
+* @Last Modified time: 2018-10-13 23:34:39
+-->
+
+<!--
+* 缩写词解释
+* teamInfo(team information):团队信息
+* teamleaderInfo：团队队长信息
+* lInfo2(leader information):第二行队长信息
+* caption：标题
+* prompt:提示/注意
+* lName(leader name):队长姓名 (下同)
+* mName(member name):成员姓名 (下同)
+* txts：文本框
+* btns：按钮
+* hx：横线
+* itemDes(item describe)：项目介绍
+* expectedRes(expected results)：预期成果
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>teamApplyaction</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../css/teamApplication.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!--顶部导航-->
+    <header id="header"></header>
+    <!--内容区-->
+    <div class="container wow fadeIn">
+        <!--团队基本信息-->
+        <section id="teamInformation">
+            <div class="text-center caption">大学生创新创业孵化基地团队入驻申请表</div>
+            <div class="teamInfo">
+                <div class="row">
+                    <div class="teamName col-lg-4 col-md-4 col-sm-4">
+                        <span>团队名称:</span>
+                        <input type="text" id="hx" class="hxTeamName" />
+                    </div>
+                    <div class="teamType col-lg-4 col-md-4 col-sm-4">
+                        <span>团队类型:</span>
+                        <input type="text" id="hx" class="hxTeamType" />
+                    </div>
+                    <div class="teamTeacher col-lg-4 col-md-4 col-sm-4">
+                        <span>指导老师:</span>
+                        <input type="text" id="hx" class="hxGuidTeacher" />
+                    </div>
+                </div>
+            </div>
+            <!--队长信息-->
+            <div class="teamleaderInfo">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 teamleader">团队队长情况：</div>
+                    <input type="text" name="teamLeaderAccount" id="teamLeaderAccountSearch" class="col-lg-2 col-md-2 col-sm-2 teamLeaderAccountSearch" placeholder="搜索本地学号添加" pattern="^\d{9}$">
+                    <button class="btn btn-primary col-lg-1 col-md-1 col-sm-1" id="teamLeaderBtn">搜索</button>
+                </div>
+                <!--第一行队长信息-->
+                <div class="row" id="lInfo">
+                    <div class="col-lg-3 col-md-3 col-sm-3 lNo">
+                        学号：<input type="text" class="leaderNumber" pattern="^\d{9}$" readonly="readonly" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 lName">
+                        姓名：<input type="text" class="leaderName" pattern="^[\u4E00-\u9FA5]{2,4}$" readonly="readonly" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 lSex">
+                        性别：<input type="text" class="leaderGender" readonly="readonly" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 lGrade">
+                        年级：<input type="text" class="leaderGrade" readonly="readonly" />
+                    </div>
+                </div>
+                <!--第二行队长信息-->
+                <div class="row" id="lInfo2">
+                    <div class="col-lg-3 col-md-3 col-sm-3 lMajor">
+                        专业方向：<input type="text" class="leaderMajor" readonly="readonly" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 lPhone">
+                        手机：<input type="text" class="leaderPhone" pattern="^1(3|4|5|7|8)\d{9}$" readonly="readonly" />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 lEmail">
+                        邮箱：<input type="email" class="leaderEmail" pattern="^[a-zA-Z0-9_.-]+@{@Html.Raw("@");}[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$" readonly="readonly" />
+                    </div>
+                </div>
+                <!--第三行队长信息-->
+                <div class="row" id="lInfo3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 lIntroduce">个人简介：</div>
+                    <textarea cols="30" rows="10" placeholder="队长个人情况说明" id="teamLeaderIntroduce"></textarea>
+                    <hr />
+                </div>
+            </div>
+        </section>
+        <!--团队成员情况-->
+        <!--团队成员情况-->
+        <section id="teamMember">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-6 col-xs-6 member">团队成员情况：</div>
+                <input type="text" name="userAccount" id="userAccountSearch" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 userAccountSearch" placeholder="搜索本地学号添加" pattern="^\d{9}$">
+                <button class="btn btn-primary col-lg-2 col-md-1 col-sm-1 col-xs-1 userAccountSearchBtn">搜索</button>
+            </div>
+            <div class="mName">姓名</div>
+            <div class="mNo">学号</div>
+            <div class="mSex">性别</div>
+            <div class="mAge">年龄</div>
+            <div class="mMajor">专业方向</div>
+            <div class="mPhone">联系电话</div>
+            <!-- 添加成员信息 -->
+            <div class="txts">
+                <ul>
+                    <li><input type="text" class="txtName" readonly="readonly" /></li>
+                    <li><input type="text" class="txtNo" readonly="readonly" /></li>
+                    <li><input type="text" class="txtSex" readonly="readonly" /></li>
+                    <li><input type="text" class="txtAge" readonly="readonly" /></li>
+                    <li><input type="text" class="txtMajor" title="样例：软件工程专业.NET一班" readonly="readonly" /></li>
+                    <li><input type="text" class="txtPhone" readonly="readonly" /></li>
+                    <li><input type="button" value="添加" class="btn btn-primary addInfo"></li>
+                </ul>
+            </div>
+            <!-- 分隔线 -->
+            <div id="fgx">成员名单：</div>
+            <div class="changeTxts"></div>
+        </section>
+        <hr>
+        <!--团队项目情况-->
+        <section id="teamItem">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 item">团队项目情况：</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 itemDes">项目介绍：</div>
+                <textarea cols="30" rows="10" placeholder="请对本团队项目做简要介绍" id="itemDes"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 itemPlan">活动计划：</div>
+                <textarea cols="30" rows="10" placeholder="请对团队活动做规划" id="itemPlan"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 expectedRes">预期成果：</div>
+                <textarea cols="30" rows="10" placeholder="请说明团队在未来将要实现的目标以及成果" id="expectedRes"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-col-lg-12 col-md-12 col-sm-12 text-center prompt">注：详情可咨询各班班主任及团队指导教师</div>
+            </div>
+            <hr />
+        </section>
+        <!--按钮-->
+        <section id="btns" class=" text-center">
+            <button type="button" class="btn btn-primary btn-lg btnSubmit">提交</button>
+        </section>
+    </div>
+    <!--底部-->
+    <footer id="footer"></footer>
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../js/teamApplication.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    $(function () {
+        //改变导航默认状态
+        navEven('团队申请');
+        //在队长搜索框点击回车键，调用搜索事件
+        $('#teamInformation .teamleaderInfo #teamLeaderAccountSearch').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#teamInformation .teamleaderInfo #teamLeaderBtn').click();
+            }
+        });
+        //在成员搜索框点击回车键，调用搜索事件
+        $('#teamMember .userAccountSearch').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#teamMember .userAccountSearchBtn').click();
+            }
+        });
+        //搜索队长学号发送AJAX
+        $('#teamInformation .teamleaderInfo #teamLeaderBtn').on('click', function () {
+            var number = $('#teamInformation .teamleaderInfo #teamLeaderAccountSearch').val();
+            var numberReg = /^\d{9}$/;
+            var numberFlag = numberReg.test(number);
+            if (!numberFlag) {
+                alert('学号格式错误，请检查！');
+                return false;
+            }
+            //获取添加的成员的学号
+            var playerNumberList = $('#teamMember .changeTxts .txts .txtNo').length;
+            if (playerNumberList >= 1) {
+                for (var i = 0; i < playerNumberList; i++) {
+                    if ($('#teamMember .changeTxts .txts .txtNo').eq(i).text() == $('#teamInformation .teamleaderInfo #teamLeaderAccountSearch').val()) {
+                        alert('队员名单中已存在此学号，请检查');
+                        return false;
+                    }
+                }
+                //如果队员没有和队长相同的学号，则发送AJAX获取数据
+                teamLeaderAjax();
+            } else {
+                teamLeaderAjax();
+            }
+            //搜索队长的AJAX交互
+            function teamLeaderAjax() {
+                $.ajax({
+                    async: true,
+                    beforeSend: function () { },
+                    complete: function () { },
+                    url: "/team/GetCaptainInfo",
+                    type: "POST",
+                    data: {
+                        id: number
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        var data = JSON.stringify(data);
+                        data = JSON.parse(data);
+                        if (data.status == 'no') {
+                            alert(data.result);
+                        } else {
+                            //调用队长的信息插入函数
+                            initLeader(data);
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data.status, data.statusText);
+                    }
+                });
+            }
+        });
+        //封装队长搜索返回的值，插入页面
+        function initLeader(data) {
+            $('#teamInformation .teamleaderInfo #lInfo .leaderNumber').attr('index', data.iUserID);
+            $('#teamInformation .teamleaderInfo #lInfo .leaderNumber').val(data.studentID);
+            $('#teamInformation .teamleaderInfo #lInfo .leaderName').val(data.Name);
+            $('#teamInformation .teamleaderInfo #lInfo .leaderGender').val(data.Gender);
+            $('#teamInformation .teamleaderInfo #lInfo .leaderGrade').val(data.Grade);
+            $('#teamInformation .teamleaderInfo #lInfo2 .leaderMajor').val(data.Major);
+            $('#teamInformation .teamleaderInfo #lInfo2 .leaderPhone').val(data.Phone);
+            $('#teamInformation .teamleaderInfo #lInfo2 .leaderEmail').val(data.Email);
+        }
+        //搜索成员学号
+        $('#teamMember .userAccountSearchBtn').on('click', function () {
+            var number = $('#teamMember .userAccountSearch').val();
+            var numberReg = /^\d{9}$/;
+            var numberFlag = numberReg.test(number);
+            if (!numberFlag) {
+                alert('学号格式错误，请检查！');
+                return false;
+            }
+            //判断成员学号是否与队长的学号重复
+            if ($('#teamInformation .teamleaderInfo #lInfo .leaderNumber').val() != "") {
+                if ($('#teamMember .userAccountSearch').val() == $('#teamInformation .teamleaderInfo #lInfo .leaderNumber').val()) {
+                    alert('此学号为队长学号，无法添加！');
+                    return false;
+                }
+                playerAJAX();
+            } else {
+                playerAJAX();
+            }
+            function playerAJAX() {
+                //搜索成员的AJAX交互
+                $.ajax({
+                    async: true,
+                    beforeSend: function () { },
+                    complete: function () { },
+                    url: "/team/GetPerson",
+                    type: "POST",
+                    data: {
+                        id: number
+                    },
+                    dataType: "json",
+                    success: function (dt) {
+                        var dt = JSON.stringify(dt);
+                        dt = JSON.parse(dt);
+                        if (dt.status == 'no') {
+                            alert(dt.result);
+                        } else {
+                            //调用添加成员的字段
+                            initPlayer(dt);
+                        }
+                    },
+                    error: function (dt) {
+                        console.log(dt.status, dt.statusText);
+                    }
+                });
+            }
+        });
+        //封装成员信息的插入操作
+        function initPlayer(dt) {
+            $('#teamMember .txts .txtName').val(dt.Name);
+            $('#teamMember .txts .txtNo').val(dt.StudentID);
+            $('#teamMember .txts .txtNo').attr('index', dt.iUserID);
+            $('#teamMember .txts .txtSex').val(dt.Gender);
+            $('#teamMember .txts .txtAge').val(dt.Age);
+            $('#teamMember .txts .txtMajor').val(dt.Major);
+            $('#teamMember .txts .txtPhone').val(dt.Phone);
+        }
+        //总的数据发送
+        //声明一个object类型的变量
+        // var teamCommit = new Object();
+        //保存按钮点击事件
+        $('#btns .btnSubmit').on('click', function () {
+            if ($('#teamInformation .teamInfo .hxTeamName').val() == "") {
+                alert('团队名称为空！');
+                return false;
+            } else if ($('#teamInformation .teamInfo .hxTeamType').val() == "") {
+                alert('团队类型为空！');
+                return false;
+            } else if ($('#teamInformation .teamInfo .hxGuidTeacher').val() == "") {
+                alert('指导教师为空！');
+                return false;
+            } else if ($('#teamInformation .teamleaderInfo #lInfo .leaderName').val() == "") {
+                alert('队长信息为空！');
+                return false;
+            } else if ($('#teamInformation .teamleaderInfo #lInfo3 #teamLeaderIntroduce').val() == "") {
+                alert('队长个人简介为空！');
+                return false;
+            } else if ($('#teamMember .changeTxts .txts .txtNo').text() == "") {
+                alert('队员信息为空！');
+                return false;
+            } else if ($('#teamItem #itemDes').val() == "") {
+                alert('项目介绍为空！');
+                return false;
+            } else if ($('#teamItem #itemPlan').val() == "") {
+                alert('活动计划为空！');
+                return false;
+            } else if ($('#teamItem #expectedRes').val() == "") {
+                alert('预期成果为空！');
+                return false;
+            } else {
+                //声明一个数组，存储队员的id
+                var PlayerId = new Array();
+                //获取到包括着队员ID的最外围元素集合
+                var playerIdList = $('#teamMember .changeTxts .txts .txtName');
+                //遍历集合，拿到这个元素上的index值即id值，存储进数组里
+                for (var i = 0; i < playerIdList.length; i++) {
+                    var num = playerIdList.eq(i).attr('index');
+                    PlayerId.push(num);
+                }
+                //对数组中的数据进行逗号分隔
+                var PlayersData = PlayerId.join(',');
+                //封装json格式
+                // teamCommit.teamName = $('#teamInformation .teamInfo .hxTeamName').val();
+                // teamCommit.teamType = $('#teamInformation .teamInfo .hxTeamType').val();
+                // teamCommit.teamTeacherName = $('#teamInformation .teamInfo .hxGuidTeacher').val();
+                // teamCommit.teamCaptainID = $('#teamInformation .teamleaderInfo #lInfo .leaderNumber').attr('index');
+                // teamCommit.teamCaptainInfo = $('#teamInformation .teamleaderInfo #lInfo3 #teamLeaderIntroduce').val();
+                // teamCommit.teamPlayers = PlayersData;
+                // teamCommit.teamExpectResult = $('#teamItem #expectedRes').val();
+                // teamCommit.teamActivityPlan = $('#teamItem #itemPlan').val();
+                // teamCommit.teamProSituation = $('#teamItem #itemDes').val();
+                //AJAX交互
+                $.ajax({
+                    async: true,
+                    beforeSend: function () { },
+                    complete: function () { },
+                    url: "/Team/TeamApplyaction",
+                    type: "POST",
+                    data: {
+                        // id:JSON.stringify(teamCommit)
+                        teamName: $('#teamInformation .teamInfo .hxTeamName').val(),
+                        teamType: $('#teamInformation .teamInfo .hxTeamType').val(),
+                        teamTeacherName: $('#teamInformation .teamInfo .hxGuidTeacher').val(),
+                        teamCaptainID: $('#teamInformation .teamleaderInfo #lInfo .leaderNumber').attr('index'),
+                        teamCaptainInfo: $('#teamInformation .teamleaderInfo #lInfo3 #teamLeaderIntroduce').val(),
+                        teamPlayers: PlayersData,
+                        teamExpectResult: $('#teamItem #expectedRes').val(),
+                        teamActivityPlan: $('#teamItem #itemPlan').val(),
+                        teamProSituation: $('#teamItem #itemDes').val()
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        var data = JSON.stringify(data);
+                        data = JSON.parse(data);
+                        if (data.status == 'ok') {
+                            alert('提交成功');
+	            window.location.href = "/Team/TeamApplyaction";
+                        } else {
+                            alert('提交失败' + data.jsonTxt);
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data.status, data.statusText);
+                    }
+                });
+            }
+        });
+    });
+</script>
+</html>

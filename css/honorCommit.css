@@ -1,0 +1,536 @@
+ /*
+* @Author: zhuohuiyun
+* @Date:   2018-10-10 09:07:21
+* @Last Modified by:   zhuohuyun
+* @Last Modified time:
+*/
+
+ body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, dl, dt, dd, input {
+     margin: 0;
+     padding: 0;
+ }
+
+ aaa body {
+     font-size: 12px;
+ }
+
+ img {
+     border: none;
+ }
+
+ label {
+     font-weight: normal;
+ }
+
+ li {
+     list-style: none;
+ }
+
+ /* input,
+select,
+textarea {
+    outline: none;
+} */
+
+ a {
+     text-decoration: none;
+ }
+
+ /* 清除浮动 */
+
+ .clearfix:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+
+ .clearfix {
+     zoom: 1;
+ }
+
+ /* 头部样式 */
+
+ /*学院标识区域~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ #schoolMark {
+     margin-top: 20px;
+ }
+
+ #schoolMark>.container {
+     height: 112px;
+     /* background-color: #c0c0c0; */
+ }
+
+ #schoolMark .collegeName img {
+     float: left;
+     margin-right: 15px;
+     height: 50px;
+     width: 50px;
+ }
+
+ #schoolMark .collegeName p {
+     float: left;
+     text-align: left;
+     height: 50px;
+     line-height: 50px;
+     font-size: 25px;
+ }
+
+ #schoolMark .honorName {
+     height: 50px;
+     margin-top: 12px;
+     text-align: center;
+ }
+
+ #schoolMark .honorName p {
+     font-family: "微软雅黑";
+     font-size: 30px;
+     margin-bottom: 0;
+ }
+
+ /* 团队介绍 */
+
+ #teamInformation {
+     width: 100%;
+ }
+
+ #teamInformation .container {
+     border-bottom: 1px solid #ccc;
+ }
+
+ #teamInformation label {
+     font-size: 20px;
+     font-family: "微软雅黑";
+     color: #000;
+     padding-right: 0;
+ }
+
+ #teamInformation .honorName label {
+     text-align: right;
+ }
+
+ #teamInformation .honorName #honorNametext {
+     margin-bottom: 10px;
+ }
+
+ #teamInformation .honorIntroduce label {
+     text-align: right;
+ }
+
+ #teamInformation .honorIntroduce textarea {
+     height: 150px;
+     margin-bottom: 5px;
+ }
+
+ @media(max-width:1200px) {
+     #teamInformation .honorLinkAndTeam .honorTeam {
+         margin-left: -82px;
+     }
+ }
+
+ @media(max-width:768px) {
+     #teamInformation .honorLinkAndTeam .honorTeam {
+         margin-left: 0px;
+     }
+     /* 固定宽高 */
+     #schoolMark {
+         width: 768px;
+     }
+     #teamInformation {
+         width: 768px;
+     }
+     #technologyIntroduce {
+         width: 768px;
+     }
+     #technologyIntroduce .tlyIntroduce .title {
+         width: 296px;
+     }
+     #technologyIntroduce .tlyIntroduce .upload {
+         width: 170px;
+     }
+     #technologyIntroduce .tlyIntroduce .download {
+         width: 163px;
+     }
+     #teamMembers .teamMember {
+         width: 768px;
+     }
+     section {
+         width: 768px;
+     }
+ }
+
+ /* 技术标识 */
+
+ #technologyIntroduce {
+     width: 100%;
+     height: 230px;
+     border-bottom: 10px;
+     /* background-color: #cacaca; */
+ }
+
+ #technologyIntroduce>.container {
+     height: 270px;
+     text-align: center;
+ }
+
+ /*第一模块 */
+
+ #technologyIntroduce>.container>.title {
+    width: 56%;
+    height: 205px;
+    margin-left: 24%;
+}
+
+ #technologyIntroduce>.container>.title>.name-group {
+     width: 100%;
+     height: 40px;
+     line-height: 30px;
+     font-size: 20px;
+     float: left;
+ }
+
+ #technologyIntroduce>.container>.title>.name-group label {
+     float: left;
+     margin-right: 30px;
+     height: 40px;
+     font-size: 20px;
+     font-family: "微软雅黑";
+     color: #000;
+ }
+
+ #technologyIntroduce>.container>.title>.name-group .content {
+     width: 72%;
+     font-size: 10px;
+     height: 35px;
+ }
+
+ /* 技术标识 */
+
+ /*-复选框-*/
+
+#technologyIntroduce>.container>.title>.select {
+    width: 76%;
+    margin-left: 14.8%;
+    margin-top: 24px;
+    height: 180px;
+}
+
+ #technologyIntroduce>.container>.title>.select ul {
+     width: 95%;
+     height: 100%;
+     padding: 10px 0 0 10px;
+ }
+
+ #technologyIntroduce>.container>.title>.select ul li {
+     list-style: none;
+     width: 33%;
+     height: 100%;
+     float: left;
+ }
+
+ #technologyIntroduce>.container>.title>.select ul li p {
+     height: 28%;
+     width: 100%;
+     font-size: 15px;
+     margin-top: 8px;
+ }
+
+ #technologyIntroduce>.container>.title>.select label {
+     font-weight: normal;
+ }
+
+ /*为技术标识写的媒体查询*/
+
+ @media(max-width:993px) {
+    #technologyIntroduce>.container>.title>.name-group .content {
+        width: 70%;
+    }
+    #technologyIntroduce>.container>.title>.select {
+        margin-left: 23.8%;
+        height: 170px;
+    }
+ }
+
+@media(max-width:768px) {
+    #technologyIntroduce>.container>.title>.name-group .content {
+        width: 64%;
+    }
+    #technologyIntroduce>.container>.title {
+        width: 386px;
+    }
+ }
+
+ /*团队成员
+*/
+
+ /*是本团对成员的样式~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ #teamMembers {
+     height: auto;
+     margin-bottom: 10px;
+ }
+
+ #teamMembers>.container {
+     height: auto;
+     text-align: center;
+     padding-top: 10px;
+     border-top: 1px solid #c0c0c0;
+ }
+
+ #teamMembers>.container>.title {
+     font-size: 20px;
+     font-weight: bold;
+     width: 200px;
+     height: 30px;
+     border-bottom: 1px solid #c0c0c0;
+     margin: 0 auto;
+ }
+
+ #teamMembers>.container>.isMember {
+     width: 100%;
+     height: auto;
+ }
+
+ #teamMembers>.container>.isMember>.search {
+     width: 90%;
+     height: 30px;
+     margin: 0 auto;
+ }
+
+ #teamMembers>.container>.isMember>.search p {
+     padding-top: 10px;
+     width: 64%;
+     height: 30px;
+     /* margin-left: 8%; */
+     margin-bottom: 5px;
+     font-size: 18px;
+     font-family: "微软雅黑";
+     text-align: left;
+     float: left;
+ }
+
+ #teamMembers>.container>.isMember>.search .schMember {
+     width: 36%;
+     float: right;
+     height: 30px;
+ }
+
+ #teamMembers .isMember>.search .schMember .content {
+     float: left;
+     width: 50%;
+ }
+
+ #teamMembers .isMember>.search .schMember button {
+     float: right;
+     margin-right: 15%;
+     width: 60px;
+     height: 30px;
+     padding: 0;
+     margin-top: 3px;
+ }
+
+ /*为搜索团队信息写的媒体查询*/
+
+ @media screen and (min-width:1200px) {
+     #teamMembers .isMember>.search .schMember .content {
+         float: left;
+         width: 60%;
+         margin-left: -13px;
+     }
+     #teamMembers .isMember>.search .schMember button {
+         margin-right: 17%;
+     }
+ }
+
+ @media screen and (max-width:992px) {
+     #teamMembers .isMember>.search .schMember .content {
+         float: left;
+         width: 50%;
+         margin-left: 15px;
+     }
+     #teamMembers .isMember>.search .schMember button {
+         margin-right: 11%;
+     }
+ }
+
+ /*为搜索团队信息写的媒体查询*/
+
+ #teamMembers>.container>.isMember>.message {
+     width: 100%;
+     margin-top: 15px;
+ }
+
+ #teamMembers .isMember>.message ul {
+     width: 90%;
+     height: 36px;
+     margin: 0px auto;
+     list-style: none;
+     padding-left: 5%;
+     margin-bottom: 10px;
+ }
+ @media(max-width:768px) {
+    #teamMembers .isMember>.message ul {
+        width: 102%;
+    }
+    #teamMembers .isMember>.search .schMember button {
+        margin-right: 3%;
+    }
+    #teamMembers .isMember>.search .schMember .content {
+        float: left;
+        width: 62%;
+        margin-left: 12px;
+    }
+ }
+
+ #teamMembers .isMember>.message ul.active {
+     border-bottom: 1px solid gray;
+ }
+
+ #teamMembers .isMember>.message ul li label {
+     font-size: 15px;
+     float: left;
+     margin-top: 4px;
+ }
+
+ #teamMembers .isMember>.message ul li input{
+     background-color: #fff;
+ }
+
+ #teamMembers .isMember>.message>ul li {
+     float: left;
+     width: 26%;
+     height: 25px;
+     margin-right: 14px;
+ }
+
+ #teamMembers .isMember .moify li p {
+     text-align: left;
+     line-height: 32px;
+     padding-left: 12px;
+     border-radius: 5px;
+ }
+
+ #teamMembers .isMember>.message>ul li .content {
+     margin-left: 3px;
+     float: left;
+     width: 80%;
+ }
+
+ #teamMembers .isMember>.message>ul li .textMess {
+     border: 1px solid rgb(179, 167, 167);
+     height: 32px;
+     background-color: #fff;
+ }
+
+ #teamMembers .isMember>.message>ul .btn {
+     width: 9%;
+     padding: 0;
+     margin-left: -6px;
+ }
+
+ #teamMembers .isMember>.message>ul .btn button {
+     width: 60px;
+     height: 30px;
+     float: right;
+     margin-top: 3px;
+ }
+
+ /*非本团队成员~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ #teamMembers>.container>.nonMember {
+     width: 100%;
+     padding-bottom: 7px;
+     margin-top: 20px;
+ }
+
+ #teamMembers>.container>.nonMember>.non {
+     width: 90%;
+     height: 30px;
+     margin: 0 auto;
+ }
+
+ #teamMembers>.container>.nonMember>.non p {
+     padding-top: 10px;
+     width: 30%;
+     height: 30px;
+     margin-bottom: 10px;
+     font-size: 18px;
+     font-family: "微软雅黑";
+     text-align: left;
+ }
+
+ #teamMembers>.container>.nonMember>.name-group {
+     width: 90%;
+     height: 30px;
+     margin: 0px auto;
+     padding-left: 5%;
+ }
+
+ #teamMembers>.container>.nonMember>.name-group label {
+     margin-top: 4px;
+     float: left;
+     font-size: 15px;
+ }
+
+ #teamMembers>.container>.nonMember>.name-group .content {
+     float: left;
+     width: 80%;
+     height: 30px;
+     margin-left: 3px;
+     margin-bottom: -5px;
+ }
+
+ /*提交~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ #teamMembers>.container>.editMit {
+     width: 90%;
+     margin: 0 auto;
+     height: 50px;
+     border-top: 1px solid gray;
+     padding-top: 10px;
+ }
+
+ #teamMembers>.container>.editMit button {
+     width: 70px;
+     height: 40px;
+ }
+
+ #teamMembers>.container>.editMit .btn {
+     padding: 0px;
+ }
+
+ /*为团队成员写的媒体查询样式*/
+
+ @media screen and (min-width:768px) {
+     #teamMembers .isMember>.message>ul li {
+         float: left;
+         width: 27%;
+         height: 25px;
+         margin-right: 14px;
+     }
+     /*当页面足够小的时候，Input标签里面的文本框也要适当更改宽度的比例*/
+     #teamMembers .isMember>.message>ul li .content {
+         margin-left: 2px;
+         float: left;
+         width: 70%;
+     }
+ }
+
+ @media screen and (min-width:992px)and(max-width:1200) {
+     #teamMembers .teamMember {
+         width: 100%;
+         margin: 0 auto;
+     }
+ }
+
+ @media screen and (min-width:1200px) {
+     #teamMembers .teamMember {
+         width: 1200px;
+         margin: 0 auto;
+     }
+     #teamMembers .isMember>.message>ul li .content {
+         margin-left: 3px;
+         float: left;
+         width: 85%;
+     }
+ }

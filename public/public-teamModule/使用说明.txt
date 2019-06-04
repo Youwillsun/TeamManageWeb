@@ -1,0 +1,17 @@
+InformationAll封装模块2.0
+
+使用封装模块注意事项：
+
+1.要在页面上创建一块内容区，格式如下：<div id="content"></div>  （id值为传入参数，根据自己需要可自行变化，此处为示例）
+
+2.引入InformationAll.css和InformationAll.jss文件
+
+4.在html页面的js里写上初始化函数，teamInfomationAll(); 
+
+5.在初始化函数里传入你要创建的位置（盒子）id以及创建的个数，如：在id为content的盒子里创建5个，则为teamInfomationAll("content",5); 
+
+6.在不同分辨率下会出现有线条和无线条，有无序排列和有序排列的情况，分别以1400px和990px的分辨率为界。
+
+解决问题：
+    解决了一个页面只能加载一次封装代码的问题，提高了代码的灵活性，可根据自己页面的需求，自行设置div的id值以及创建个数。
+

@@ -1,0 +1,167 @@
+/*
+ * @Author: 陈湘云
+ * @Date: 2018年10月28日16:05:51
+ * @LastEditors: 孙永威
+ * @LastEditTime: 2018-11-03 20:21:42
+ * @Description: 团队信息单个页面
+ * @version: 1.0
+ */
+
+
+/**
+ * 公共样式
+ */
+
+ /*------下划线--------*/
+ #underline{
+    width: 260px;
+    height: 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top-color: #555;
+    border-top-width: 1px;
+    margin-top: 10px;
+ }
+
+/**
+ * 团队名字
+ */
+ #teamName div:first-child{
+     font-size: 32px;
+     font-weight: bold;
+     margin-top: 20px;
+ }
+
+
+/**
+ * 团队展示:团队主打、团队宣言、成果总结
+*/
+#teamShow .teamMain,.teamDeclare,.teamAchievement{
+    margin-top: 15px;
+    font-size: 22px;
+    text-align: center;
+}
+/*-----三个盒子------*/
+#teamShow .box{
+    height: 200px;
+    border: 1px solid #555;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+/*-----盒子里的文字------*/
+#teamShow .box p{
+	font-size: 16px;
+	text-indent: 2em;
+	padding: 15px;
+}
+#teamShow .box:hover{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    font-weight: bold;
+}
+
+
+/**
+ * 成员简介
+*/
+#memberIntro .memIntro{
+     font-size: 25px;
+     font-weight: bold;
+     margin-top: 30px;
+}
+#memberIntro input{
+    margin-bottom: 30px;
+}
+#memberIntro .hx{
+    width: 100%;
+    height: 1px;
+    background-color: #c0c0c0;
+    margin-top: 40px;
+    
+}
+
+/**
+ * 成立时间、地点、发起人介绍
+*/
+#otherIntro .otherInfo{
+    width: 100%;
+    height: 65px;
+    border: 1px solid #555;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+#otherIntro .otherInfo p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+/**
+ * 媒体查询
+ */
+ 
+/*屏幕最大为1200px，最小为994px*/
+@media (min-width: 994px) and (max-width: 1200px){
+
+ /*团队主打、团队宣言、成果总结 文字*/
+ #teamShow .teamMain,.teamDeclare,.teamAchievement{
+    margin-top: 15px;
+    font-size: 22px;
+    text-align: center;
+  }
+    /*成立时间、地点外部盒子，文字对齐方式变化*/
+   #otherIntro .otherInfo{
+      height: 100px;
+   }
+   #otherIntro .otherInfo p{
+      font-size: 20px;
+      margin-top: 5px;
+      text-align: center;
+   }
+   #teamShow .box p{
+	font-size: 14px;
+	text-indent: 2em;
+	padding: 15px;
+	}
+}
+
+/*屏幕最大为994px*/
+@media (max-width: 994px) { 
+
+  /*团队主打、团队宣言、成果总结 文字*/
+  #teamShow .teamMain,.teamDeclare,.teamAchievement{
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+  }
+    /*成立时间、地点外部盒子，文字对齐方式变化*/
+   #otherIntro .otherInfo{
+      height: 100px;
+   }
+   #otherIntro .otherInfo p{
+      font-size: 20px;
+      margin-top: 5px;
+      text-align: center;
+   }
+   #teamShow .box p{
+	font-size: 12px;
+	text-indent: 2em;
+	padding: 15px;
+	}
+} 
+
+
+@media(max-width:768px){
+    #teamName{
+        width: 768px;
+    }
+    #teamShow{
+        width: 768px;
+    }
+    #memberIntro{
+        width: 768px;
+    }
+    #otherIntro{
+        width: 768px;
+    }
+}

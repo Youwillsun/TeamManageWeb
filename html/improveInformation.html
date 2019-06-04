@@ -1,0 +1,802 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>improveInformation</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../css/improveInformation.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header"></header>
+    <!-- 头部 END -->
+
+    <div class="allContent wow fadeIn">
+        <!-- 所有完善按钮 -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <button class="btn btn-primary" href="#home" aria-controls="home" role="tab" data-toggle="tab">完善团队信息</button>
+            </li>
+            <li role="presentation">
+                <button class="btn btn-primary improveHonorBtn" href="#profile" aria-controls="profile" role="tab"
+                    data-toggle="tab">完善荣耀信息</button>
+            </li>
+            <li><button class="btn btn-primary perInfo"><a href="/PerIntroduce/Index">完善个人信息</a></button></li>
+        </ul>
+        <!-- 所有完善按钮 END-->
+
+        <div class="tab-content wow fadeIn">
+            <!-- 完善团队简介 -->
+            <div role="tabpanel" class="preTeamInfo tab-pane active" id="home">
+                <div class="container">
+                    <div class="teamProfile">
+                        <h4>团队简介：</h4>
+                        <textarea class="msgTxt" placeholder="请介绍一下您的团队"></textarea>
+                        <h6>注：请团队简介填写不要超过300字哦！</h6>
+                        <button class="btn btn-primary teamProfileBtn">提交</button>
+                    </div>
+
+                    <div class="teamSign">
+                        <h4>团队主打：</h4>
+                        <textarea class="msgTxt" placeholder="请填写您团队的主打"></textarea>
+                        <h6>注：请团队主打填写不要超过300字哦！</h6>
+                        <button class="btn btn-primary teamSignBtn">提交</button>
+                    </div>
+
+                    <div class="teamLogoInfo">
+                        <div class="image-editor upLoadLog">
+                            <div class="cropit-preview upLog"></div>
+                            <input type="file" name="logo" class="cropit-image-input" style="display:none">
+                            <button class="btn btn-primary select-image-btn">选择图片</button>
+                            <button class="btn btn-primary export teamLogoInfoBtn">上传LOGO</button>
+                            <img src="" alt="临时存储logo" class="teamLogoImg" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="teamSliderInfo">
+                        <div class="image-editor teamSlide">
+                            <h4>配置团队轮播图</h4>
+                            <div class="cropit-preview slidePicture"> </div>
+                            <div class="row selUpBtn">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 btnPicture">
+                                    <input type="file" class="cropit-image-input" style="display:none">
+                                    <button class="btn btn-primary select-image-btn">选择图片</button>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 btnPicture">
+                                    <button class="btn btn-primary export">生成图片</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="againUpLoad">
+                        <div class="smallSlideFirst">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideSecond">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideThird">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideFour">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideFive">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                    </div>
+
+                    <div class="teamSubmit text-center">
+                        <hr>
+                        <button class="btn btn-primary">上传图片</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 完善团队简介 END-->
+
+
+            <!-- 完善荣耀简介  -->
+            <div role="tabpanel" class="preGloryInfo tab-pane wow fadeIn" id="profile">
+                <div class="container">
+
+                    <!-- 上传logo区 -->
+                    <div class="gloryLogoInfo">
+                        <div class="image-editor upLoadLog">
+                            <div class="cropit-preview upLog"></div>
+                            <input type="file" name="logo" class="cropit-image-input" style="display:none">
+                            <button class="btn btn-primary select-image-btn">选择图片</button>
+                            <button class="btn btn-primary export gloryLogoInfoBtn">上传LOGO</button>
+                            <img src="" alt="临时存储LOGO图片" class="gloryLogoImg" style="display: none;">
+                        </div>
+                    </div>
+
+                    <!-- 文件上传区 -->
+                    <div class="gloryFile">
+                        <div class="gloryFileBox">
+                            <div class="upload">
+                                <h3>荣耀上传</h3>
+                                <!--上传单个荣耀文件-->
+                                <div class="groupImage" style="display:none;">
+                                    <form id="form" class="ajaxForm" action="/ImproveHonor/UploadHonor" method="POST" enctype="multipart/form-data" autocomplete="off" target="target">
+                                        <input type="file" name="honorFile" class="fileBtn">
+                                        <!-- 传输honorId和DownLoad的值 -->
+                                        <input type="text" name="honorId" value="" class="honorIdIpt" style="display: none;">
+                                        <input type="text" name="DownLoad" value="" class="DownLoadIpt" style="display: none;">
+                                        <input type="submit" class="subBtn">
+                                    </form>
+                                    <iframe name="target" id="target" style="display:none;"></iframe>
+                                </div>
+                                <button class="btn btn-info btn-md selectBtn">选择文件</button>
+                                <div class="fileNameBox">
+                                    <p class="fileName"></p>
+                                </div>
+                                <button class="btn btn-info btn-md uploadBtn">上传文件</button>
+                            </div>
+                            <div class="download">
+                                <!--是否提供下载-->
+                                <p>是否提供下载:</p>
+                                <div class="select">
+                                    <span class="pull-left "><label><input type="radio" name="ipt" value="是">是</label></span>
+                                    <span class="pull-right "><label><input type="radio" name="ipt" value="否">否</label></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 上传轮播图 -->
+                    <div class="glorySlideInfo">
+                        <div class="image-editor glorySlide">
+                            <h4>配置荣耀轮播图</h4>
+                            <div class="cropit-preview slidePicture"> </div>
+                            <div class="row selUpBtn">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 btnPicture">
+                                    <input type="file" class="cropit-image-input" style="display:none">
+                                    <button class="btn btn-primary select-image-btn">选择图片</button>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 btnPicture">
+                                    <button class="btn btn-primary export">生成图片</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小图生成区 -->
+                    <div class="againUpLoad">
+                        <div class="smallSlideFirst">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideSecond">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideThird">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideFour">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                        <div class="smallSlideFive">
+                            <img src="" alt="请生成图片...">
+                            <button class="btn btn-primary">重新生成</button>
+                        </div>
+                    </div>
+
+                    <div class="glorySubmit text-center">
+                        <hr>
+                        <button class="btn btn-primary">上传图片</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 完善荣耀简介  END-->
+
+            <!-- 遮罩层 -->
+            <div id="bgDiv" class="wow zoomIn"></div>
+            <div class="teamHonorAll wow bounceIn" id="teamHonorAll"></div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer id="footer"></footer>
+    <!-- 底部 END -->
+</body>
+
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/jQuery Form-3.51.0/jquery.form.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../lib/cropit.js-0.5.1/jquery.cropit.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script src="../js/improveInformation.js"></script>
+<script>
+    $(function () {
+        //创建遮罩层的荣耀列表
+        honorMaskLayer("#teamHonorAll", 5);
+        //先判断身份
+        $.ajax({
+            async:true,
+            beforeSend: function () {},
+            complete: function () {},
+            url: "/HomePage/GetLoginUserIdentity",
+            type: "GET",
+            dataType: "json",
+            success:function(message){
+                var message = JSON.stringify(message);
+                message = JSON.parse(message);
+                if(message.status == 'ok'){
+                    identityId(message);
+                }else{
+                    alert('非法用户!');
+                    //自动退出其账号
+                    $.ajax({
+                        async:true,
+                        url:"/Quit/QuitLoginUser",
+                        type:"POST",
+                        dataType:"json",
+                        success:function(data){
+                            var data = JSON.stringify(data);
+                            data = JSON.parse(data);
+                            if (data.status == 'ok') {
+                                window.location.href = '/HomePage/Index';
+                                window.event.returnValue = false;
+                            }
+                            if (data.status == 'fail') {
+                                cosnole.log(data.status, data.statusText);
+                            }
+                        },
+                        error:function(data){
+                            console.log(data.status,data.statusText);
+                        }
+                    });
+                }
+            },
+            error:function(message){
+                console.log(message.status,message.statusText);
+            }
+        });
+        //这个函数牵涉到了身份的判断，同时调用了其他函数
+        function identityId(message){
+            //identityId的作用就是判断登录用户的身份，如果为空，则禁用页面
+            if (message.identity == null) {
+                $('textarea.msgTxt').attr('readonly', 'readonly');
+                $('button').attr('disabled', 'disabled');
+                $('button.perInfo a').attr('href', 'javascript:void(0)');
+            } else {
+                $.ajax({
+                    async: true,
+                    beforeSend: function () {},
+                    complete: function () {},
+                    url: "/ImproveHonor/GetTeamInfo",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        var data = JSON.stringify(data);
+                        data = JSON.parse(data);
+                        //如果小于4，除完善个人信息按钮外，禁用其他所有按钮
+                        //当用户的身份在4即队长以上时才开放所有权限，否则只能点击完善个人信息
+                        if (message.identity < 4) {
+                            $('textarea.msgTxt').attr('readonly', 'readonly');
+                            $('button').attr('disabled', 'disabled');
+                            $('button.perInfo').removeAttr('disabled');
+                            $('button.perInfo a').on('click', function () {
+                                // var index = data.userId;
+                                // var url = 'perInfoImprove.html';
+                                // window.location.href = url + '?index=' + index;
+                                window.location.href = '/PerIntroduce/Index';
+                            });
+                        } else {
+                            //调用DOM操作函数,开放所有权限
+                            //调用完善团队信息的操作
+                            teamInit(data);
+                            $('button.perInfo a').on('click', function () {
+                                // var index = data.userId;
+                                // var url = 'perInfoImprove.html';
+                                // window.location.href = url + '?index=' + index;
+                                window.location.href = '/PerIntroduce/Index';
+                            });
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data.status, data.statusText);
+                    }
+                });
+            }
+        }
+        //点击完善荣耀按钮，先获取本团队所有荣耀信息
+        $('.allContent .improveHonorBtn').on('click', function () {
+            //页面遮罩
+            $("#bgDiv").css("display", "block");
+            $(".teamHonorAll").css("display", "block");
+            // 发送AJAX
+            $.ajax({
+                async: true,
+                beforeSend: function () {},
+                complete: function () {},
+                url: "/ImproveHonor/GetHonorInfo",
+                type: "GET",
+                dataType: "json",
+                success: function (dt) {
+                    var dt = JSON.stringify(dt);
+                    dt = JSON.parse(dt);
+                    //调用遮罩层的DOM操作
+                    maskLayer(dt);
+                },
+                error: function (dt) {
+                    console.log(dt.status, dt.statusText);
+                }
+            });
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //封装DOM操作，供给于团队栏
+        function teamInit(data) {
+            improveInformation.teamSingle(data);
+            improveInformation.teamSlider(data);
+            improveInformation.teamLogo();
+        }
+        //封装DOM操作，供给于荣耀栏
+        function honorInit(data) {
+            improveInformation.honorLogo();
+            improveInformation.honorSlider(data);
+        }
+        //封装DOM操作，供给于遮罩层
+        function maskLayer(data) {
+            improveInformation.HMaskLayer(data);
+            improveInformation.HMaskLayerClick();
+        }
+        var improveInformation = (function () {
+            //团队栏的单个操作
+            function teamSingle(data) {
+                //写入团队简介数据
+                if (data.teamIntroduce == "null") {
+                    data.teamIntroduce = "";
+                }
+                $('.allContent .preTeamInfo .teamProfile .msgTxt').text(data.teamIntroduce);
+                //点击团队简介的提交时，向后台提交数据
+                $('.allContent .preTeamInfo .teamProfile .teamProfileBtn').on('click', function () {
+                    if ($('.allContent .preTeamInfo .teamProfile .msgTxt').val() == null) {
+                        alert('团队简介不能为空!');
+                    } else {
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddTeamIntroduce",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                teamIntroduce: $(
+                                    '.allContent .preTeamInfo .teamProfile .msgTxt'
+                                ).val()
+                            },
+                            success: function (teamInfoI) {
+                                var teamInfoI = JSON.stringify(teamInfoI);
+                                teamInfoI = JSON.parse(teamInfoI);
+                                if (teamInfoI == 'OK') {
+                                    alert('提交成功!');
+                                } else {
+                                    alert(teamInfoI.msg);
+                                }
+                            },
+                            error: function (teamInfoI) {
+                                console.log(teamInfoI.status, teamInfoI.statusText);
+                            }
+                        });
+                    }
+                });
+                //写入团队主打数据
+                if (data.teamMain == "null") {
+                    data.teamMain = "";
+                }
+                $('.allContent .preTeamInfo .teamSign .msgTxt').text(data.teamMain);
+                //点击团队主打的提交时，向后台提交数据
+                $('.allContent .preTeamInfo .teamSign .teamSignBtn').on('click', function () {
+                    if ($('.allContent .preTeamInfo .teamSign .msgTxt').val() == null) {
+                        alert('团队主打不能为空!');
+                    } else {
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddTeamMain",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                teamMain: $(
+                                    '.allContent .preTeamInfo .teamSign .msgTxt').val()
+                            },
+                            success: function (teamInfoM) {
+                                var teamInfoM = JSON.stringify(teamInfoM);
+                                teamInfoM = JSON.parse(teamInfoM);
+                                if (teamInfoM == 'OK') {
+                                    alert('提交成功!');
+                                } else {
+                                    alert(teamInfoM.msg);
+                                }
+                            },
+                            error: function (teamInfoM) {
+                                console.log(teamInfoM.status, teamInfoM.statusText);
+                            }
+                        });
+                    }
+                });
+            }
+            //团队栏里的轮播操作
+            function teamSlider(data) {
+                if (data.teamSlider == "null") {
+                    teamSliderAjax();
+                } else {
+                    var teamSlider = JSON.parse(data.teamSlider);
+                    //利用循环给每个团队轮播，小图的src赋值
+                    for (var i = 0; i < teamSlider.length; i++) {
+                        $('.allContent .preTeamInfo .againUpLoad div img').eq(i).src = teamSlider[i].image;
+                    }
+                    teamSliderAjax();
+                }
+                //封装teamslider的AJAX交互
+                function teamSliderAjax() {
+                    $('.allContent .preTeamInfo .teamSubmit button').on('click', function () {
+                        //创建一个存放图片src地址的数组
+                        var teamSliderArray = new Array();
+                        //获取所有图片地址，结果获取到的是一个数组
+                        var teamSliderImg = $('.allContent .preTeamInfo .againUpLoad div img');
+                        //循环判断img的地址是不是为空
+                        for (var i = 0; i < teamSliderImg.length; i++) {
+                            //如果有src的值不为空，则压入数组
+                            if (teamSliderImg.eq(i).attr('src') != "") {
+                                teamSliderArray.push(teamSliderImg.eq(i).attr('src'));
+                            }
+                        }
+                        //判断数组是否为空，为空则提示
+                        if(teamSliderArray.length < 1){
+                            alert('轮播图至少一张哦!');
+                            return false;
+                        }else if(teamSliderArray.length == 1){
+                            var teamSliderSrc = teamSliderArray[0];
+                        }else{
+                            teamSliderSrc = teamSliderArray.join('#');
+                        }
+                        //发送AJAX
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddTeamSliderAddress",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                teamSliderAddress: teamSliderSrc
+                            },
+                            success: function (teamInfoS) {
+                                var teamInfoS = JSON.stringify(teamInfoS);
+                                teamInfoS = JSON.parse(teamInfoS);
+                                if (teamInfoS.status == 'ok') {
+                                    alert('提交成功!');
+                                    //清空图片
+                                    teamSliderImg.attr('src',"");
+                                } else {
+                                    alert(teamInfoS.result);
+                                }
+                            },
+                            error: function (teamInfoS) {
+                                console.log(teamInfoS.status, teamInfoS.statusText);
+                            }
+                        });
+                    });
+                }
+            }
+            //团队栏里的LOGO操作
+            function teamLogo() {
+                $('.allContent .preTeamInfo .teamLogoInfo .teamLogoInfoBtn').on('click', function () {
+                    if ($('.allContent .preTeamInfo .teamLogoInfo .teamLogoImg').attr('src') ==
+                        "") {
+                        alert('还没选择LOGO呢!')
+                    } else {
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddTeamLogoAddress",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                teamLogoAddress: $(
+                                    '.allContent .preTeamInfo .teamLogoInfo .teamLogoImg'
+                                ).attr('src')
+                            },
+                            success: function (teamInfoL) {
+                                var teamInfoL = JSON.stringify(teamInfoL);
+                                teamInfoL = JSON.parse(teamInfoL);
+                                if (teamInfoL.status == 'ok') {
+                                    alert('提交成功!');
+                                } else {
+                                    alert(teamInfoL.result);
+                                }
+                            },
+                            error: function (teamInfoL) {
+                                console.log(teamInfoL.status, teamInfoL.statusText);
+                            }
+                        });
+                    }
+                });
+            }
+            //荣耀栏里的LOGO操作
+            function honorLogo() {
+                $('.allContent .preGloryInfo .gloryLogoInfo .gloryLogoInfoBtn').on('click', function () {
+                    if ($('.allContent .preGloryInfo .gloryLogoInfo .gloryLogoImg').attr('src') ==
+                        "") {
+                        alert('还没选择LOGO呢!')
+                    } else {
+                        var honorsId = $('.allContent div .preGloryInfo').attr('honorsId');
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddHonorLogoAddress",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                honorLogoAddress: $(
+                                    '.allContent .preGloryInfo .gloryLogoInfo .gloryLogoImg'
+                                ).attr('src'),
+                                honorId:honorsId
+                            },
+                            success: function (honorInfoL) {
+                                var honorInfoL = JSON.stringify(honorInfoL);
+                                honorInfoL = JSON.parse(honorInfoL);
+                                if (honorInfoL.status == 'ok') {
+                                    alert('提交成功!');
+                                } else {
+                                    alert(honorInfoL.result);
+                                }
+                            },
+                            error: function (honorInfoL) {
+                                console.log(honorInfoL.status, honorInfoL.statusText);
+                            }
+                        });
+                    }
+                });
+            }
+            //荣耀栏里的轮播操作
+            function honorSlider(data) {
+                if (data.honorSlider == null) {
+                    honorSliderAjax();
+                } else {
+                    var honorSlider = JSON.parse(data.honorSlider);
+                    //利用循环给每个荣耀轮播，小图的src赋值
+                    for (var i = 0; i < honorSlider.length; i++) {
+                        $('.allContent .preGloryInfo .againUpLoad div img').eq(i).src = honorSlider[i].image;
+                    }
+                    honorSliderAjax();
+                }
+                //封装荣耀轮播操作
+                function honorSliderAjax() {
+                    $('.allContent .preGloryInfo .glorySubmit button').on('click', function () {
+                        //声明一个存放荣耀轮播的数组
+                        var honorSliderArray = new Array();
+                        //获取到所有图片地址
+                        var allSliderImg = $('.allContent .preGloryInfo .againUpLoad div img');
+                        //循环判断，将不为空的地址存入数组
+                        for(var i = 0;i<allSliderImg.length;i++){
+                            if(allSliderImg.eq(i).attr('src') != ""){
+                                honorSliderArray.push(allSliderImg.eq(i).attr('src'));
+                            }
+                        }
+                        //判断数组情况，为空，则阻止操作，不为空则发送AJAX
+                        if(honorSliderArray.length < 1){
+                            alert('轮播图至少一张哦!');
+                            return false;
+                        }else if(honorSliderArray.length == 1){
+                            var honorSliderSrc = honorSliderArray[0];
+                        }else{
+                            honorSliderSrc = honorSliderArray.join('#');
+                        }
+                        //，获取honorId，发送AJAX
+                        var honorsId = $('.allContent div .preGloryInfo').attr('honorsId');
+                        $.ajax({
+                            async: true,
+                            beforeSend: function () {},
+                            complete: function () {},
+                            url: "/ImproveHonor/AddHonorSliderAddress",
+                            type: "POST",
+                            dataType: "json",
+                            data: {
+                                honorSliderAddress: honorSliderSrc,
+                                honorId:honorsId
+                            },
+                            success: function (honorInfoS) {
+                                var honorInfoS = JSON.stringify(honorInfoS);
+                                honorInfoS = JSON.parse(honorInfoS);
+                                if (honorInfoS.status == 'ok') {
+                                    alert('提交成功!');
+                                    //清空图片
+                                    allSliderImg.attr('src',"");
+                                } else {
+                                    alert(honorInfoS.result);
+                                }
+                            },
+                            error: function (honorInfoS) {
+                                console.log(honorInfoS.status, honorInfoS.statusText);
+                            }
+                        });
+                    });
+                }
+            }
+            //荣耀栏里的遮罩层DOM操作
+            function HMaskLayer(data) {
+                var trNum = data.HonorList.length;
+                if (trNum < 1) {
+                    alert('您的团队暂无荣耀，快去上传一个吧!');
+		    $("#bgDiv").css("display", "none");
+                    $('.preGloryInfo button').attr('disabled', 'disabled');
+                    return false;
+                } else {
+                    honorMaskLayer("#teamHonorAll", trNum);
+                    for (var m = 0; m < trNum; m++) {
+                        //把荣耀id赋给index
+                        $('#teamHonorAll .thaBox tbody tr').eq(m).attr('index', data.HonorList[m].honorId);
+                        //动态改变荣耀名字
+                        $('#teamHonorAll .thaBox tbody tr').eq(m).find('td').eq(1).text(data.HonorList[m].honorName);
+                        //动态改变指导教师
+                        $('#teamHonorAll .thaBox tbody tr').eq(m).find('td').eq(2).text(data.HonorList[m].guidTeacher);
+                        //转换时间格式
+                        var submitTime = timeChage(data.HonorList[m].submitTime);
+                        $('#teamHonorAll .thaBox tbody tr').eq(m).find('td').eq(2).text(submitTime);
+                    }
+                }
+            }
+            //遮罩层点击事件
+            function HMaskLayerClick(){
+                //点击对应的tr行，传送id值创建信息
+                $('.teamHonorAll .thaBox table tbody tr').on('click', function () {
+                    //隐藏遮罩层和tr行
+                    $("#bgDiv").css("display", "none");
+                    $(".teamHonorAll").css("display", "none");
+                    //获取到tr行的荣耀id值，设置成为完善荣耀盒子的一个属性，点击提交LOGO和轮播二者时顺带发送荣耀id
+                    honorsId = $(this).attr('index');
+                    $('.allContent div .preGloryInfo').attr('honorsId',honorsId);
+                    $.ajax({
+                        async: true,
+                        beforeSend: function () {},
+                        complete: function () {},
+                        url: "/ImproveHonor/GetThisHonor",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            honorId: honorsId
+                        },
+                        success: function (info) {
+                            var info = JSON.stringify(info);
+                            info = JSON.parse(info);
+                            //调用DOM操作函数
+                            honorInit(info);
+                        },
+                        error: function (info) {
+                            console.log(info.status, info.statusText);
+                        }
+                    });
+                });
+            }
+            return {
+                teamSingle: teamSingle,
+                teamSlider: teamSlider,
+                teamLogo: teamLogo,
+                honorSlider: honorSlider,
+                honorLogo: honorLogo,
+                HMaskLayer: HMaskLayer,
+                HMaskLayerClick:HMaskLayerClick
+            }
+        })();
+
+        //点击选择文件
+        $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .selectBtn').on('click', function () {
+            //自动点击input选择文件
+            $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .fileBtn').click();
+            //获取文件名，并插入到页面
+            $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .fileBtn').change(function () {
+                //剪切出文件名
+                var temp = this.value;
+                var num = temp.lastIndexOf('\\');
+                temp = temp.substring(num + 1);
+                $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .fileName').html('文件名：' + temp);
+            });
+        });
+        //定义门限bool值和数组，防止用户重复提交
+        var judgeInput = false;
+        var stringArray = new Array();
+        //这个变量是为了，判断input:radio的状态,并进行赋值
+        var radioVlaue;
+        //点击上传文件按钮
+        $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .uploadBtn').on('click', function () {
+            //判断门限值情况
+            if(judgeInput == true){
+                var fileName = $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .fileName').text();
+                if (fileName == '文件名：') {
+                    alert('请选择一个文件');
+                }else{
+                    for(var i = 0;i<stringArray.length;i++){
+                        if(fileName == stringArray[i]){
+                            alert('此文件已提交');
+                        }else{
+                            judgeInput = false;
+                            uploadFile();
+                        }
+                    }
+                }
+            }else{
+                uploadFile();
+            }
+        });
+        //把上传文件逻辑判断进行封装
+        function uploadFile(){
+            //获取单选按钮的包括元素
+            var radio = $('.allContent .preGloryInfo .gloryFile .gloryFileBox .download .select input');
+            //判断单选按钮情况
+            if (radio.eq(0).is(':checked') == true) {
+                radioVlaue = radio.eq(0).attr('value');
+            }
+            if (radio.eq(1).is(':checked') == true) {
+                radioVlaue = radio.eq(1).attr('value');
+            }
+            //如果单选按钮都是未选中状态，则提示先选择是否提供下载
+            if(radio.eq(0).is(':checked') == false && radio.eq(1).is(':checked') == false){
+                alert('请选择-文件是否提供下载-');
+            }else{
+                //返回荣耀id，通过把荣耀ID设置到input标签上（还有是否下载的标识）
+                var honorsId = $('.allContent div .preGloryInfo').attr('honorsId');
+                $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .honorIdIpt').attr('value',honorsId);
+                $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .DownLoadIpt').attr('value',radioVlaue);
+                //自动调用文件提交按钮
+                $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .subBtn').click();
+                //接收回台的返回值，提示用户信息
+                var textStr;
+                $('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .groupImage #target').load(function () {
+                    textStr = $(this);
+                    //textStr[0].contentDocument.body.textContent :  这个就是后台返回的内容
+                    var jsonText = JSON.parse(textStr[0].contentDocument.body.textContent);
+                    if (jsonText.status == 'ok') {
+                        alert('文件上传成功');
+                        //提交成功，把名字压入数组
+                        stringArray.push($('.allContent .preGloryInfo .gloryFile .gloryFileBox .upload .fileName').text());
+                        //改变门限值，防止用户重复提交
+                        judgeInput = true;
+                        //清除掉单选框选中状态
+                        radio.eq(0).removeAttr('checked');
+                        radio.eq(1).removeAttr('checked');
+                    } else {
+                        alert(jsonText.result);
+                    }
+                });
+            }
+        }
+    });
+</script>
+
+</html>

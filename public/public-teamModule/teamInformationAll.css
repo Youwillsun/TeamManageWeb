@@ -1,0 +1,269 @@
+body {
+    background-color: #F0F3EF;
+}
+
+#head {
+    width: 100%;
+    height: 92px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+
+/* 搜索框部分样式开始 */
+
+#search .searchBox {
+    width: 760px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 10px 205px;
+}
+
+#search .searchBox .searchIpt {
+    width: 695px;
+    height: 38px;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    font-family: "微软雅黑";
+}
+
+#search .searchBox i {
+    font-size: 28px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+
+/* 搜索框部分样式结束 */
+
+
+/* 团队介绍模块样式开始 */
+
+#teamIntroduce .teamIntroduceBox {
+    width: 100%;
+    height: 170px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#teamIntroduce+#teamIntroduce {
+    margin-top: 20px;
+}
+
+#teamIntroduce .teamIntroduceBox .teamLogo {
+    border-radius: 10px;
+    width: 148px;
+    height: 148px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 10px;
+    padding-left: 0px;
+    padding-right: 0;
+}
+
+#teamIntroduce .teamIntroduceBox .teamLogoImg {
+    border-radius: 10px;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent {
+    width: 970px;
+    height: 170px;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .information {
+    width: 250px;
+    height: 150px;
+    margin: 10px 0 0 2px;
+    line-height: 28px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #000;
+    float: left;
+    padding-left: 15px;
+    background-color: #f4f4f4;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .information .teamName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .introduce,
+.leading {
+    width: 330px;
+    height: 150px;
+    border: 1px solid #F0F3EF;
+    float: left;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .introduce {
+    margin-left: 25px;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .teamIntroduceWord,
+.teamLeadingWord {
+    width: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+    color: #000;
+    word-wrap: break-word;
+    margin: 25px 0 0 12px;
+    float: left;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .introduceTextarea,
+.leadingTextarea {
+    width: 280px;
+    height: 130px;
+    float: right;
+    border: 1px solid #000;
+    margin: 10px 5px 10px 0;
+    text-indent: 2em;
+    font-size: 13px;
+    color: #000;
+    font-family: "微软雅黑";
+    line-height: 25px;
+    overflow: hidden;
+    padding-left: 5px;
+    letter-spacing: 1px;
+    background-color: #fff;
+}
+#teamIntroduce .teamIntroduceBox .teamContent .introduce .introduceTextarea:hover{
+    font-weight: bold;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .leading .leadingTextarea:hover{
+    font-weight: bold;
+}
+
+#teamIntroduce .teamIntroduceBox .teamContent .leading {
+    margin-left: 22px;
+}
+
+
+/* 团队介绍模块样式结束 */
+
+
+/* 媒体查询控制样式 */
+
+@media(max-width:1200px) {
+    /* 控制搜索框样式开始 */
+    #search .searchBox {
+        margin: 10px 110px;
+    }
+    /* 控制搜索框样式结束 */
+    /* 团队介绍模块样式开始 */
+    #teamIntroduce .teamIntroduceBox {
+        height: 150px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamLogo {
+        width: 130px;
+        height: 130px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent {
+        width: 790px;
+        height: 150px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .information {
+        width: 200px;
+        height: 130px;
+        margin: 10px 0 0 2px;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .information .teamName {
+        font-size: 16px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce,
+    .leading {
+        width: 270px;
+        height: 130px;
+        margin-top: 10px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce .teamIntroduceWord,
+    .teamLeadingWord {
+        width: 18px;
+        font-size: 16px;
+        margin: 20px 0 0 9px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce .introduceTextarea,
+    .leadingTextarea {
+        width: 230px;
+        height: 110px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .detailedBtn {
+        margin: 36px 12px 0 0px;
+    }
+    /* 团队介绍模块样式结束 */
+}
+
+@media(max-width:992px) {
+    /* 控制搜索框样式开始 */
+    #search .searchBox {
+        margin: 10px -5px;
+    }
+    /* 控制搜索框样式结束 */
+    /* 团队介绍模块样式开始 */
+    #teamIntroduce .teamIntroduceBox {
+        height: 130px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamLogo {
+        width: 110px;
+        height: 110px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent {
+        width: 600px;
+        height: 130px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .information {
+        width: 170px;
+        height: 110px;
+        margin: 8px 0 0 2px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .information .teamName {
+        font-size: 14px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce,
+    .leading {
+        width: 190px;
+        height: 110px;
+        margin-top: 10px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce .teamIntroduceWord,
+    .teamLeadingWord {
+        width: 16px;
+        font-size: 14px;
+        margin: 10px 0 0 6px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .introduce .introduceTextarea,
+    .leadingTextarea {
+        width: 155px;
+        height: 90px;
+    }
+    #teamIntroduce .teamIntroduceBox .teamContent .detailedBtn {
+        width: 22px;
+        font-size: 12px;
+        margin: 30px 10px 0 0px;
+    }
+    /* 团队介绍模块样式结束 */
+}
+
+@media(max-width:768px){
+    #team{
+        width: 768px;
+    }
+}

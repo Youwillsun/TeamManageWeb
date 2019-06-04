@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>honorInformationAll</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../public/public-honorModule/honorInformationAll.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!-- 头部模块开始 -->
+    <header id="header"></header>
+    <!-- 头部模块结束 -->
+
+    <!-- 搜索框模块开始 -->
+    <section id="search" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="searchBox col-lg-12 col-sm-12 col-md-12">
+                    <input type="text" name="search" class="searchIpt" placeholder="请输入荣耀名称">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 搜索框模块结束 -->
+
+    <!-- 内容区模块开始 -->
+    <div id="honorContent"></div>
+    <!-- 内容区模块结束 -->
+
+    <!-- 底部模块开始 -->
+    <footer id="footer"></footer>
+    <!-- 底部模块结束 -->
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-honorModule/honorInformationAll.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    //保持页面完整性所留,测试注释
+    honorInformation("#honorContent", 10);
+    //在搜索框点击回车键，调用搜索事件
+    $('#search .searchBox .searchIpt').keydown(function (e) {
+        if (e.keyCode == 13) {
+            $('#search .searchBox i').click();
+        }
+    });
+    $(function () {
+        //改变导航默认状态
+        navEven('荣耀信息');
+        $.ajax({
+            async: true,
+            beforeSend: function () {},
+            complete: function () {},
+            url: "/HonorALL/GetHonorAll",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var data = JSON.stringify(data);
+                data = JSON.parse(data);
+                //调用函数
+                HonorContent(data);
+            },
+            error: function (data) {
+                console.log(data.status, data.statusText);
+            }
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //搜索框点击事件点击事件
+        $('#search .searchBox i').on('click', function () {
+            $.ajax({
+                async: true,
+                beforeSend: function () {},
+                complete: function () {},
+                type: "POST",
+                url: "/Search/SearchContent",
+                dataType: "json",
+                data: {
+                    search: $('#search .searchBox .searchIpt').val(),
+                    btn: "honorBtn"
+                },
+                success: function (dt) {
+                    var dt = JSON.stringify(dt);
+                    dt = JSON.parse(dt);
+                    if (dt != null) {
+                        //调用函数
+                        HonorContent(dt)
+                    } else {
+                        alert('没有这个荣耀的信息！');
+                    }
+                }
+            });
+        });
+        //接收传输的值,并判断相应的情况，写入对应的内容
+        function HonorContent(info) {
+            var honorIntroduceNum = info.length;
+            if (honorIntroduceNum <= 0) {
+                return false;
+            } else {
+                honorInformation("#honorContent", honorIntroduceNum);
+            }
+            //获取到第一排信息列外围盒子
+            var information = $('#honorContent #honorIntroduce .honorIntroduceBox .honorContent .information');
+            for (var i = 0; i < honorIntroduceNum; i++) {
+                //首先判断荣耀的id值，若为空，则不进行内容的创建
+                if (info[i].honorId == null) {
+                    alert('荣耀ID返回有误');
+                } else {
+                    //设置荣耀id给honorlogo的div
+                    $('#honorContent #honorIntroduce .honorIntroduceBox .honorLogo').eq(i).attr('index', info[i].honorId);
+                    //设置logo地址
+                    $('#honorContent #honorIntroduce .honorIntroduceBox .honorLogo a img')[i].src = info[i].honorLogo;
+                    //判断荣耀名称是否为空
+                    if (info[i].honorName == null) {
+                        info[i].honorName = '暂无';
+                    }
+                    information.eq(i).find('.honorName').text("荣耀名称：" + info[i].honorName);
+                    //判断指导教师是否为空
+                    if (info[i].guidTeacher == null) {
+                        info[i].guidTeacher = '暂无';
+                    }
+                    information.eq(i).find('.honorTeacher').text("指导教师：" + info[i].guidTeacher);
+                    //判断荣耀队长是否为空
+                    if (info[i].honorTeam == null) {
+                        info[i].honorTeam = '暂无';
+                    }
+                    information.eq(i).find('.honorHeader').text("所属团队：" + info[i].honorTeam);
+                    //判断成立时间是否为空
+                    var honorSubmit;
+                    if (info[i].honorSubmit == null) {
+                        honorSubmit = '暂无';
+                    } else {
+                        honorSubmit = timeChage(info[i].honorSubmit);
+                    }
+                    information.eq(i).find('.establishTime').text("上传时间：" + honorSubmit);
+                    //判断荣耀简介是否为空
+                    if (info[i].honorIntroduce == null) {
+                        info[i].honorIntroduce = '天呐！这个荣耀竟然什么都没有！';
+                    }
+                    $(
+                        '#honorContent #honorIntroduce .honorIntroduceBox .honorContent .introduce .introduceTextarea'
+                    ).eq(i).text(info[i].honorIntroduce);
+                    //判断荣耀主打是否为空
+                    if (info[i].unperHonorName == null) {
+                        info[i].unperHonorName = '参与成员呢？';
+                    }
+                    var arr = [];
+                    for (var j = 0; j < info[i].personList.length; j++) {
+                        arr.push(info[i].personList[j].Name);
+                    }
+                    $(
+                        '#honorContent #honorIntroduce .honorIntroduceBox .honorContent .leading .leadingTextarea'
+                    ).eq(i).text(info[i].unperHonorName + "，" + arr.join('，'));
+
+                }
+
+            }
+            //点击对应的荣耀LOGO拼接传值
+            $('#honorContent #honorIntroduce .honorIntroduceBox .honorLogo a').on('click', function () {
+                //拼接地址，把值传到下一个页面
+                var index = $(this).parent().attr('index');
+                var url = '/SingleHonor/Index';
+                window.location.href = url + '?index=' + index;
+            });
+        }
+    });
+</script>
+
+</html>

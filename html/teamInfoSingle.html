@@ -1,0 +1,358 @@
+<!--
+* @Author: 陈湘云
+* @Date:   2018-10-14 12:07:09
+* @Last Modified by:   陈湘云
+* @Last Modified time: 2018年10月31日20:08:10
+-->
+
+<!--
+* 命名解释：
+* underline:下划线
+* carousel:轮播图
+* memberIntro(member introduce):成员简介
+* otherInfo(other information):其他信息
+* otherIntro(other introduce)：成立地点时间等介绍
+* 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>teamInfoSingle</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../css/teamInfoSingle.css">
+    <link rel="stylesheet" href="../public/public-slider/slider.css">
+    <link rel="stylesheet" href="../public/public-memberModule/memberInformationAll.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <!--顶部导航-->
+    <header id="header"></header>
+
+    <!--所在团队名字-->
+    <section id="teamName">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center" id="teamNameContent">BAR团队</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <input type="text" id="underline" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--轮播图-->
+    <section id="main_ad" class="carousel slide" data-ride="carousel"></section>
+
+    <!--团队展示：团队主打 团队宣言 成果总结-->
+    <section id="teamShow">
+        <div class="container">
+            <div class="row wow fadeIn">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 teamMain">团队简介</div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 teamDeclare">团队主打</div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 teamAchievement">预期成果</div>
+            </div>
+            <div class="row wow fadeIn">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="box" id="teamMainContent">
+                        <p>江南烟雨，似乎是愁的代名词，在文字中，我们和江南烟雨相约了几千年，
+                            在让人生愁的江南烟雨面前，我们又和文字相约了几千年，烟雨中我们相
+                            识了带着娇愁美的佳人，也相识了带着满腹忧怨的才子，还相识过带着清
+                            愁的文人骚客。记忆中的那些过往的历史记载，或缠绵悱恻，或悱恻缠绵。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="box" id="teamDeclareContent">
+                        <p>如果在暮春的烟雨中抚琴一曲，并在脸颊露着不易察觉的浅笑，那么，
+                            在荷花初绽的时节一定会遇到惊喜，此时，音乐的旋律将是高山流水般
+                            的动人心扉。如果在晚秋的烟雨中抚琴一曲，然后看着寒池残荷，音乐的
+                            旋律将是凄凄婉婉，不由得会使你心生怜悯，那时的天空将会有一颗诗的
+                            流星陨落，而让情境更加凄婉。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="box" id="teamAchievementContent">
+                        <p>一些曾经的文字片段，似经过情感玉液的浸泡，勾勾撇撇，横横竖竖，表现
+                            着生命中的感人情节。当某一段生命空间飘来乌云时，此时的文字语言，
+                            总是闪烁着晶荧的泪滴。历史演绎的悲怆，流淌着涓涓涩泪，浸染着千古的
+                            凄美故事。
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!--成员简介-->
+    <section id="memberIntro">
+        <!--100%的横线-->
+        <div class="hx"></div>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center memIntro">成员简介</div>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            <input type="text" id="underline" />
+        </div>
+        <!--封装代码块-->
+        <div id="memberContent"></div>
+    </section>
+
+    <!--成立时间，成立地点，发起人 说明-->
+    <section id="otherIntro">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-12-lg col-md-12 col-sm-12 otherInfo">
+                    <div class="col-lg-4 col-md-12 col-sm-12 text-left" id="setupTime">
+                        <p>成立时间：2018年9月16日</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 text-center" id="applicationLocation">
+                        <p>成立地点：安阳师范学院软件学院</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 text-right" id="teacherName">
+                        <p>发起人：神秘人</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--底部-->
+    <footer id="footer"></footer>
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-slider/slider.js"></script>
+<script src="../public/public-memberModule/memberInformationAll.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    // 为了保持页面的完整性所留，测试需要注释
+    slider('#main_ad', 1);
+    memberInformation("#memberContent", 6);
+
+    $(function () {
+        //获取地址中的index值
+        var teamId = decodeURI(window.location.href).split('=')[1];
+        //判断index值是否为空，为空则加载1号团队
+        if (teamId == null) {
+            teamId = 1;
+        }
+        //发送ajax，传输teamId的值
+        $.ajax({
+            async: true,
+            beforeSend: function () {},
+            complete: function () {},
+            type: "POST",
+            url: "/Team/TeamInfoSingle",
+            dataType: "json",
+            data: {
+                id: teamId
+            },
+            success: function (data) {
+                var data = JSON.stringify(data);
+                data = JSON.parse(data);
+                //传入数据
+                init(data);
+            },
+            error: function (data) {
+                console.log(data.status, data.statusText);
+            }
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //封装DOM操作
+        function init(data) {
+            //调用单个的DOM操作数据函数
+            teamInfoSingle.singleData(data);
+            //调用轮播图DOM操作数据函数
+            teamInfoSingle.teamSingleSlider(data);
+            //调用个人信息长条矩形函数
+            teamInfoSingle.personalIntroduce(data);
+            //调用点击事件,点击则把相应的id值拼接到url后面
+            teamInfoSingle.eventClick();
+        };
+
+        var teamInfoSingle = (function () {
+            // 封装单个数据DOM操作
+            function singleData(data) {
+                //团队名称操作
+                $('#teamName #teamNameContent').text(data.TeamName);
+                //判断团队介绍是否为空
+                if (data.TeamIntroduce == null) {
+                    data.TeamIntroduce = '这个团队什么也没有留下！';
+                }
+                $('#teamShow #teamMainContent p').text(data.TeamIntroduce);
+                //判断团队主打是否为空
+                if (data.TeamMain == null) {
+                    data.TeamMain = '我也想知道他们的主打方向。';
+                }
+                $('#teamShow #teamDeclareContent p').text(data.TeamMain);
+                //判断团队预期成果是否为空
+                if (data.TeamExpectResult == null) {
+                    data.TeamExpectResult = '期望在哪里？？';
+                }
+                $('#teamShow #teamAchievementContent p').text(data.TeamExpectResult);
+                //判断成立时间是否为空
+                var TeamSetupTime;
+                if (data.TeamSetupTime == null) {
+                    TeamSetupTime = '暂无';
+                } else {
+                    TeamSetupTime = timeChage(data.TeamSetupTime);
+                }
+                $('#otherIntro #setupTime p').text("成立时间：" + TeamSetupTime);
+
+                //判断成立地点是否为空
+                if (data.TeamApplicationLocation == null) {
+                    data.TeamApplicationLocation = '暂无';
+                }
+                $('#otherIntro #applicationLocation p').text("成立地点：" + data.TeamApplicationLocation);
+                //判断发起人是否为空
+                if (data.TeamTeacherName == null) {
+                    data.TeamTeacherName = '暂无';
+                }
+                $('#otherIntro #teacherName p').text("发起人：" + data.TeamTeacherName);
+            }
+            // 封装集合数据——轮播图
+            function teamSingleSlider(data) {
+                var teamSliderJson = JSON.parse(data.TeamSliderAdd);
+                //获取到服务器json数组中的IndexSlider长度
+                var sliderNum = teamSliderJson.length;
+                //如果获取个数为0，则sliderNum = 1，保证创建一个
+                if (sliderNum < 1) {
+                    slider('#main_ad', 1);
+                    return false;
+                } else {
+                    //创建相应个数轮播图
+                    slider('#main_ad', sliderNum);
+                    //把获取到的值，替换img.src
+                    var img = $('#main_ad .item img');
+                    for (var k = 0; k < sliderNum; k++) {
+                        img[k].src = teamSliderJson[k].image;
+                    }
+                }
+            }
+            // 封装集合数据——个人信息简介
+            function personalIntroduce(data) {
+                //获取返回数据的信息长度，然后自动创建相应个数
+                var memberIntroduceNum = data.TeamPlayersStripModelList.length;
+                if (memberIntroduceNum <= 0) {
+                    return false;
+                } else {
+                    memberInformation("#memberContent", memberIntroduceNum);
+                }
+                //获取到第一排信息列外围盒子
+                var information = $(
+                    '#memberContent #memberIntroduce .memberIntroduceBox .memberContent .information'
+                );
+                //利用循环，动态改变页面内的值
+                for (var i = 0; i < memberIntroduceNum; i++) {
+                    if(data.TeamPlayersStripModelList[i].PalyID == null){
+                        alert('成员ID返回有误');
+                    }else{
+                        //设置个人信息Box，id值
+                        $('#memberContent #memberIntroduce .memberIntroduceBox .memberLogo').eq(i).attr('index', data.TeamPlayersStripModelList[
+                            i].PalyID);
+                        //设置个人信息头像图片地址
+                        $('#memberContent #memberIntroduce .memberIntroduceBox .memberLogo a img')[i].src =
+                            data.TeamPlayersStripModelList[i].PlayerPhoAdd;
+                        //判断姓名是否为空
+                        if (data.TeamPlayersStripModelList[i].PlayName == null) {
+                            data.TeamPlayersStripModelList[i].PlayName = '暂无';
+                        }
+                        information.eq(i).find('.memberName').text("姓名：" + data.TeamPlayersStripModelList[i]
+                            .PlayName);
+                        //判断姓别是否为空
+                        if (data.TeamPlayersStripModelList[i].PlayGender == null) {
+                            data.TeamPlayersStripModelList[i].PlayGender = '暂无';
+                        }
+                        information.eq(i).find('.memberTeacher').text("性别：" + data.TeamPlayersStripModelList[
+                            i].PlayGender);
+                        //判断职务：8-指导老师，4-队长，2-队员
+                        switch (data.TeamPlayersStripModelList[i].PlayType) {
+                            case 8:
+                                data.TeamPlayersStripModelList[i].PlayType = '指导老师';
+                                break;
+                            case 4:
+                                data.TeamPlayersStripModelList[i].PlayType = '队长';
+                                break;
+                            case 2:
+                                data.TeamPlayersStripModelList[i].PlayType = '队员';
+                                break;
+                            default:
+                                data.TeamPlayersStripModelList[i].PlayType = '暂无';
+                                break;
+                        }
+                        // if(data.TeamPlayersStripModelList[i].PlayType == 8){
+                        //     data.TeamPlayersStripModelList[i].PlayType = '指导老师';
+                        // }else if(data.TeamPlayersStripModelList[i].PlayType == 4){
+                        //     data.TeamPlayersStripModelList[i].PlayType = '队长';
+                        // }else if(data.TeamPlayersStripModelList[i].PlayType == 2){
+                        //     data.TeamPlayersStripModelList[i].PlayType = '队员';
+                        // }else{
+                        //     data.TeamPlayersStripModelList[i].PlayType = '暂无';
+                        // }
+                        information.eq(i).find('.memberHeader').text("团队职务：" + data.TeamPlayersStripModelList[
+                            i].PlayType);
+                        //判断联系方式是否为空
+                        if (data.TeamPlayersStripModelList[i].PlayIphone == null) {
+                            data.TeamPlayersStripModelList[i].PlayIphone = '暂无';
+                        }
+                        information.eq(i).find('.establishTime').text("联系方式：" + data.TeamPlayersStripModelList[
+                            i].PlayIphone);
+                        //判断个人简介是否为空
+                        if (data.TeamPlayersStripModelList[i].PlayIntroduction == null) {
+                            data.TeamPlayersStripModelList[i].PlayIntroduction = '这个人什么都没有留下!';
+                        }
+                        $(
+                            '#memberContent #memberIntroduce .memberIntroduceBox .memberContent .introduce .introduceTextarea'
+                        ).eq(i).text(data.TeamPlayersStripModelList[i].PlayIntroduction);
+                        //判断兴趣爱好是否为空
+                        if (data.TeamPlayersStripModelList[i].PlayHobby == null) {
+                            data.TeamPlayersStripModelList[i].PlayHobby = '这个人好像没什么爱好!';
+                        }
+                        $(
+                            '#memberContent #memberIntroduce .memberIntroduceBox .memberContent .leading .leadingTextarea'
+                        ).eq(i).text(data.TeamPlayersStripModelList[i].PlayHobby); 
+                    }
+                }
+            }
+            //点击事件，当所有的DOM创建完成之后，设置点击事件
+            function eventClick() {
+                $('#memberContent #memberIntroduce .memberIntroduceBox .memberLogo a').on('click',
+                    function () {
+                        var index = $(this).parent().attr('index');
+                        var url = '/PersonShow/Index';
+                        window.location.href = url + '?index=' + index;
+                    });
+            }
+            return {
+                singleData: singleData,
+                teamSingleSlider: teamSingleSlider,
+                personalIntroduce: personalIntroduce,
+                eventClick: eventClick
+            }
+        })();
+    });
+</script>
+
+</html>

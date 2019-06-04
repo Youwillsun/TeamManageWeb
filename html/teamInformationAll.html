@@ -1,0 +1,184 @@
+<!--
+* @Author: 李明慧
+* @Date:   2018-10-16
+* @Last Modified by: 李明慧
+* @Last Modified time: 2018-10-16
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Information All</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../public/public-teamModule/teamInformationAll.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <header id="header"></header>
+    <!-- 头部模块结束 -->
+    <!-- 搜索框模块 -->
+    <section id="search">
+        <div class="container">
+            <div class="row">
+                <div class="searchBox col-lg-12 col-sm-12 col-md-12">
+                    <input type="text" name="search" class="searchIpt" onkeydown="keyLogin()" placeholder="请输入团队名称">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 搜索框模块结束 -->
+    <section id="team"></section>
+    <!-- 底部模块开始 -->
+    <footer id="footer"></footer>
+    <!-- 底部模块结束 -->
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-teamModule/teamInformationAll.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    // 保持页面的完整性，测试时需要注释掉
+    teamInformation("#team", 6);
+
+    $(function () {
+        //改变导航默认状态
+        navEven('团队信息');
+        //在搜索框点击回车键，调用搜索事件
+        $('#search .searchBox .searchIpt').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('#search .searchBox i').click();
+            }
+        });
+        //页面加载时的请求
+        $.ajax({
+            async: true,
+            beforeSend: function () {},
+            complete: function () {},
+            url: "/Team/GetTeamAll",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var data = JSON.stringify(data);
+                data = JSON.parse(data);
+                //调用函数
+                teamContent(data);
+            },
+            error: function (data) {
+                console.log(data.status, data.statusText);
+            }
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //搜索框点击事件点击事件
+        $('#search .searchBox .searchIpt i').on('click', function () {
+            $.ajax({
+                async: true,
+                beforeSend: function () {},
+                complete: function () {},
+                type: "POST",
+                url: "",
+                dataType: "json",
+                data: {
+                    search: $('#search .searchBox .searchIpt').val(),
+                    btn: "teamBtn"
+                },
+                success: function (dt) {
+                    var dt = JSON.stringify(dt);
+                    dt = JSON.parse(dt);
+                    if (dt != null) {
+                        teamContent(dt);
+                    } else {
+                        alert('没有这个团队的信息！');
+                    }
+                }
+            });
+        });
+
+        //接收传输的值,并判断相应的情况，写入对应的内容
+        function teamContent(info) {
+            var teamIntroduceNum = info.length;
+            if (teamIntroduceNum <= 0) {
+                return false;
+            } else {
+                teamInformation("#team", teamIntroduceNum);
+            }
+            //获取到第一排信息列外围盒子
+            var information = $('#team #teamIntroduce .teamIntroduceBox .teamContent .information');
+            for (var i = 0; i < teamIntroduceNum; i++) {
+                //首先判断团队的id值，若为空，则不进行内容的创建
+                if(info[i].TeamID == null){
+                    alert('荣耀ID返回有误');
+                }else{
+                    $('#team #teamIntroduce .teamIntroduceBox .teamLogo').eq(i).attr('index', info[i].TeamID);
+                    $('#team #teamIntroduce .teamIntroduceBox .teamLogo a img')[i].src = info[i].TeamLogAdd;
+                    //判断团队名称是否为空
+                    if (info[i].TeamName == null) {
+                        info[i].TeamName = '暂无';
+                    }
+                    information.eq(i).find('.teamName').text("团队名称：" + info[i].TeamName);
+                    //判断指导教师是否为空
+                    if (info[i].TeamTeaName == null) {
+                        info[i].TeamTeaName = '暂无';
+                    }
+                    information.eq(i).find('.teamTeacher').text("指导教师：" + info[i].TeamTeaName);
+                    //判断团队队长是否为空
+                    if (info[i].TeamCaptainName == null) {
+                        info[i].TeamCaptainName = '暂无';
+                    }
+                    information.eq(i).find('.teamHeader').text("团队队长：" + info[i].TeamCaptainName);
+                    //判断成立时间是否为空
+                    var TeamTime;
+                    if (info[i].TeamTime == null) {
+                        TeamTime = '暂无';
+                    } else {
+                        TeamTime = timeChage(info[i].TeamTime);
+                    }
+                    information.eq(i).find('.establishTime').text("成立时间：" + TeamTime);
+                    //判断团队简介是否为空
+                    if (info[i].TeamIntroduce == null) {
+                        info[i].TeamIntroduce = '天呐！这个团队竟然什么都没有写！';
+                    }
+                    $('#team #teamIntroduce .teamIntroduceBox .teamContent .introduce .introduceTextarea').eq(i).text(
+                        info[i].TeamIntroduce);
+                    //判断团队主打是否为空
+                    if (info[i].TeamMain == null) {
+                        info[i].TeamMain = '天呐！这个团队竟然什么都没有写！';
+                    }
+                    $('#team #teamIntroduce .teamIntroduceBox .teamContent .leading .leadingTextarea').eq(i).text(
+                        info[i].TeamMain);
+                }
+            }
+            //点击对应的团队LOGO拼接传值
+            $('#team #teamIntroduce .teamIntroduceBox .teamLogo a').on('click', function () {
+                //拼接地址，把值传到下一个页面
+                var index = $(this).parent().attr('index');
+                var url = '/team/TeamInfoSingle';
+                window.location.href = url + '?index=' + index;
+            });
+        }
+    });
+</script>
+
+</html>

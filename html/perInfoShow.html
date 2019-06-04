@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>perInfoShow</title>
+    <link rel="stylesheet" href="../public/public-css/css-clear.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/animate.css-3.5.0/animate.min.css">
+    <link rel="stylesheet" href="../public/public-header/header.css">
+    <link rel="stylesheet" href="../css/perInfoShow.css">
+    <link rel="stylesheet" href="../public/public-perHonorModule/perHonorModule.css">
+    <link rel="stylesheet" href="../public/public-footer/footer.css">
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section class="personal_information wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <!-- per_name  个人昵称及头像-->
+                <div class="per_name col-xs-12 text-center">
+                    <img src="../img/perInfoShow/headPhoto.jpg" alt="头像" class="img-rounded">
+                    <span>BAR团队队员</span>
+                </div>
+            </div>
+            <div class="row">
+                <!-- per_data 个人信息板块 -->
+                <div class="per_data col-xs-12 text-center">
+                    <!-- 班级和专业信息 -->
+                    <!-- name_major 姓名及专业信息的类名 -->
+                    <div class="name_major">
+                        <span><i class="fa fa-user" aria-hidden="true">&nbsp</i>姓名:<span id="realName">赵梦威</span></span>
+                        <span id="gradeMajor">年级/方向：2016级.NET方向一班</span>
+                    </div>
+                    <div class="perContactInfo">
+                        <!-- 微信和手机信息 -->
+                        <!-- custom_positionR 这个类名规定了 在不同像素下的微信及手机信息的占位 和文字占位 -->
+                        <div class="col-md-6 col-xs-12 custom_positionR">
+                            <!-- per_wechat per_phone 这两个类名为以后给手机及微信 填充数据用 -->
+                            <span class="per_wechat"><i class="fa fa-weixin" aria-hidden="true">&nbsp</i>:<span>这是一个微信</span></span>
+                            <span class="per_phone"><i class="fa fa-mobile" aria-hidden="true">&nbsp</i>:<span>这是一个手机</span></span>
+                        </div>
+                        <!-- QQ和邮箱信息 -->
+                        <!-- custom_positionL 这个类名规定了 在不同像素下的qq及邮箱信息的占位 和文字占位-->
+                        <div class="col-md-6 col-xs-12 custom_positionL">
+                            <!-- per_qq per_mail  qq和邮箱这两个span的类名  为以后填充数据用 -->
+                            <span class="per_qq"><i class="fa fa-qq" aria-hidden="true">&nbsp</i>:<span>这是一个QQ号</span></span>
+                            <span class="per_mail"><i class="fa fa-envelope" aria-hidden="true">&nbsp</i>:<span>这是一个邮箱</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container hidden-xs hidden-sm">
+                <div class="row">
+                    <!-- style_tabel 自定义表格板块在不同分辨率下的大小及位置 -->
+                    <div class="style_tabel">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <span class="col-xs-3">所属团队</span>
+                                <img src="../public/public-img/LOGO.jpg" alt="团队LOGO" class="img-responsive belongTeamImg">
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="col-xs-6">个人简介</span>
+                                <p class="perIntroduce">本团队成立于2018年9月9日,我这是测试文字的东西，我就是随便写写，今天阳光明媚，晴朗的日子里，却有些忧伤，或许是因为今天是阴天，看来天气影响人的心情是正确的，今晚看了我不是药神，整的我又忧伤加剧了，搞得我都想思考人生了，但是，人总要强迫自己微笑，而且，我还是是个纯洁无暇的小男生。</p>
+
+                            </div>
+                            <div class="col-xs-3">
+                                <span class="col-xs-3">兴趣爱好</span>
+                                <p class="hobby">本团队成立于2018年9月9日,我这是测试文字的东西</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my_glory wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="style_content text-center">
+                    <span class="fa fa-trophy"></span>&nbsp<span id="myHonorWord">我的荣耀</span>&nbsp<span class="fa fa-trophy"></span>
+                </div>
+            </div>
+        </div>
+        <div id="honorContent"></div>
+    </section>
+
+    <!-- 模态框（Modal） -->
+    <div class="myModalMate modal fade" id="myModalMate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">信息匹配</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group col-sm-6 col-sm-offset-3">
+                        <label for="number">账号:</label><input type="text" class="form-control content firstname" placeholder="请输入账号" pattern="^\d{9}$">
+                    </div>
+                    <div class="form-group col-sm-6 col-sm-offset-3">
+                        <label for="number">密码:</label><input type="password" class="form-control content firstname" placeholder="请输入密码" pattern="(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{10,16}">
+                    </div>
+                    <div class="form-group col-sm-6 col-sm-offset-3">
+                        <label for="number">姓名:</label><input type="text" class="form-control content firstname" placeholder="请输入姓名" pattern="^[\u4e00-\u9fa5 ]{2,20}$">
+                    </div>
+                    <div class="form-group col-sm-6 col-sm-offset-3">
+                        <label for="number">荣耀名称:</label><input type="text" class="form-control content firstname" placeholder="请输入荣耀名称">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#myModalAdvice"
+                        id="Match">快速匹配</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第二个模态框id，现在自动添加 id="myModalAdvice" -->
+    <div class="myModalAdvice modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" id="advice" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title" id="myModalLabel">感悟与建议</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="meSg">
+                        <div class="means">
+                            <p>个人感悟</p>
+                            <textarea name="" id="meansText" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="suggest">
+                            <p>个人建议</p>
+                            <textarea name="" id="suggestText" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="commit" data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 定义一个按钮，这个按钮专门用力召唤第二个模态框出现 -->
+    <button class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#myModalAdvice"
+    id="ModalAdviceClick" style="display:none;">召唤第二个模态框</button>
+
+
+    <footer id="footer"></footer>
+
+</body>
+<script src="../lib/jquery-2.1.4/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../lib/wow-1.1.2/wow.min.js"></script>
+<script src="../public/public-header/header.js"></script>
+<script src="../public/public-perHonorModule/perHonorModule.js"></script>
+<script src="../public/public-footer/footer.js"></script>
+<script>
+    $(function () {
+        //保持页面完整性所留
+        perHonorInformation("#honorContent", 5);
+        //解决模态框导致的页面偏移抖动问题
+        $(".myModalAdvice").on('hidden.bs.modal', function () {
+            $('body').removeAttr('style class');
+        });
+        //个人展示页面AJAX交互
+        $.ajax({
+            async: true,
+            beforeSend: function () {},
+            complete: function () {},
+            url: "/PersonShow/ShowPerson",
+            type: "POST",
+            dataType: "json",
+            data: {
+                userId: decodeURI(window.location.href).split('=')[1]
+            },
+            success: function (data) {
+                var data = JSON.stringify(data);
+                if (data == 'no') {
+                    return false;
+                } else {
+                    data = JSON.parse(data);
+                    //调用DOM操作函数
+                    init(data);
+                }
+
+            },
+            error: function (data) {
+                console.log(data.status, data.statusText);
+            }
+        });
+
+        //单独封装的时间转化函数
+        function timeChage(time) {
+            //把时间转换一下格式，年 月 日
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var timeEnd = year + '年' + month + '月' + day + '日';
+            return timeEnd;
+        }
+        //封装DOM操作函数
+        function init(data) {
+            perInfoShow.singleInfo(data);
+            perInfoShow.honorInfo(data);
+            perInfoShow.infoMatching(data);
+            perInfoShow.eventClick();
+        }
+        var perInfoShow = (function () {
+            //封装单个的dom操作
+            function singleInfo(data) {
+                //改变头像地址
+                $('.personal_information .per_name img').attr('src', data.perInfo.perPhotoAddress);
+                //判断昵称是否为空
+                if (data.perInfo.perNickName == null) {
+                    data.perInfo.perNickName = "暂无";
+                }
+                $('.personal_information .per_name span').text(data.perInfo.perNickName);
+                //判断真实姓名是否为空
+                if (data.perInfo.perName == null) {
+                    data.perInfo.perName = "暂无";
+                }
+                $('.personal_information .per_data .name_major #realName').text(data.perInfo.perName);
+                //判断年级和方向是否为空，两项其中一项为空则清空为空的一项，若都为空则显示暂无
+                if (data.perInfo.perGrade == null) {
+                    data.perInfo.perGrade = "";
+                }
+                if (data.perInfo.perMajor == null) {
+                    data.perInfo.perMajor = "";
+                }
+                if (data.perInfo.perMajor == null && data.perInfo.perGrade == null) {
+                    data.perInfo.perGrade = "暂无";
+                    data.perInfo.perMajor = "";
+                }
+                $('.personal_information .per_data .name_major #gradeMajor').text("年级/方向：" + data.perInfo
+                    .perGrade + data.perInfo.perMajor);
+                //判断微信号是否为空
+                if (data.perInfo.perWechat == null) {
+                    data.perInfo.perWechat = "暂无";
+                }
+                $('.personal_information .per_data .perContactInfo .custom_positionR .per_wechat span')
+                    .text(data.perInfo.perWechat);
+                //判断手机号是否为空
+                if (data.perInfo.perPhone == null) {
+                    data.perInfo.perPhone = "暂无";
+                }
+                $('.personal_information .per_data .perContactInfo .custom_positionR .per_phone span').text(
+                    data.perInfo.perPhone);
+                //判断QQ号是否为空
+                if (data.perInfo.perQQ == null) {
+                    data.perInfo.perQQ = "暂无";
+                }
+                $('.personal_information .per_data .perContactInfo .custom_positionL .per_qq span').text(
+                    data.perInfo.perQQ);
+                //判断邮箱是否为空
+                if (data.perInfo.perEmail == null) {
+                    data.perInfo.perEmail = "暂无";
+                }
+                $('.personal_information .per_data .perContactInfo .custom_positionL .per_mail span').text(
+                    data.perInfo.perEmail);
+                //动态改变所属团队的logo
+                $('.personal_information .style_tabel .belongTeamImg').attr('src', data.perInfo.perTeamLogo);
+                //判断个人简介是否为空
+                if (data.perInfo.perIntroduce == null) {
+                    data.perInfo.perIntroduce = "暂无";
+                }
+                $('.personal_information .style_tabel .perIntroduce').text(data.perInfo.perIntroduce);
+                //判断兴趣爱好是否为空
+                if (data.perInfo.perHobby == null) {
+                    data.perInfo.perHobby = "暂无";
+                }
+                $('.personal_information .style_tabel .hobby').text(data.perInfo.perHobby);
+            }
+            //封装页面上的荣耀
+            function honorInfo(data) {
+                //判断返回的荣耀长度
+                var honorNum = data.perHonorList.length;
+                //若是长度小于等于0
+                if (honorNum <= 0) {
+                    //把我的荣耀改成暂无荣耀
+                    $('.my_glory .style_content #myHonorWord').text('暂无荣耀');
+                } else {
+                    perHonorInformation("#honorContent", honorNum);
+                    var honorContent = $(
+                        '.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorContent');
+                    for (var i = 0; i < honorNum; i++) {
+                        //判断荣耀ID是否为空
+                        if(data.perHonorList[i].honorId == null){
+                            alert('个人荣耀ID返回有误');
+                        }else{
+                            //改变当前荣耀的index值
+                            $('.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorLogo').eq(i).attr('index', data.perHonorList[
+                                i].honorId);
+                            //改变荣耀的logo地址
+                            $(
+                                '.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorLogo .honorLogoImg'
+                            ).eq(i).attr('src', data.perHonorList[i].honorLogo);
+                            //改变荣耀名称
+                            if (data.perHonorList[i].honorName == null) {
+                                data.perHonorList[i].honorName = "暂无";
+                            }
+                            honorContent.find('.information .honorName').eq(i).text('荣耀名称：' + data.perHonorList[
+                                i].honorName);
+                            //改变指导教师姓名
+                            if (data.perHonorList[i].honorTeacher == null) {
+                                data.perHonorList[i].honorTeacher = "暂无";
+                            }
+                            honorContent.find('.information .honorTeacher').eq(i).text('指导教师：' + data.perHonorList[
+                                i].honorTeacher);
+                            //改变所属团队名称
+                            if (data.perHonorList[i].teamName == null) {
+                                data.perHonorList[i].teamName = "暂无";
+                            }
+                            honorContent.find('.information .honorHeader').eq(i).text('所属团队：' + data.perHonorList[
+                                i].teamName);
+                            //改变上传时间
+                            var honorSubmit;
+                            if (data.perHonorList[i].honorSubmit == null) {
+                                honorSubmit = "暂无";
+                            } else {
+                                honorSubmit = timeChage(data.perHonorList[i].honorSubmit);
+                            }
+                            honorContent.find('.information .establishTime').eq(i).text('上传时间：' +
+                                honorSubmit);
+                            //改变荣耀感悟
+                            if (data.perHonorList[i].honorFell == null) {
+                                data.perHonorList[i].honorFell = "暂无";
+                            }
+                            honorContent.find('.introduce .introduceTextarea').eq(i).text(data.perHonorList[
+                                i].honorFell);
+                            //改变荣耀建议
+                            if (data.perHonorList[i].honorAdvice == null) {
+                                data.perHonorList[i].honorAdvice = "暂无";
+                            }
+                            honorContent.find('.leading .leadingTextarea').eq(i).text(data.perHonorList[i].honorAdvice);
+                        }
+                    }
+                }
+            }
+            //封装点击事件
+            function eventClick() {
+                //拼接地址字符串
+                $('.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorLogo a').on('click',
+                    function () {
+                        var index = $(this).parent().attr(
+                            'index');
+                        var url = '/SingleHonor/Index';
+                        window.location.href = url + '?index=' + index;
+                    });
+            }
+            //封装信息匹配
+            function infoMatching(data) {
+                //定义一个变量，接受点击感悟和建议按钮传输的id值（honorAndAdviceId）,其实就是这个荣耀的Id
+                var honorAndAdviceId;
+                //点击获取honorId
+                $(
+                    '.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorContent .detailedBtn'
+                ).on('click', function () {
+                    honorAndAdviceId = $(this).parent().parent().parent().parent().parent().attr(
+                        'index');
+                });
+                //第一个模态框信息匹配AJAX
+                $('.myModalMate #Match').on('click', function () {
+                    $.ajax({
+                        async: true,
+                        beforeSend: function () {
+                            $('#myModalMate #Match').text('信息匹配中···');
+                        },
+                        complete: function () {
+                            $('#myModalMate #Match').text('快速匹配');
+                        },
+                        url: "/PersonShow/GetHonorInfo",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            honorId: honorAndAdviceId,
+                            useraccount: $('#myModalMate .firstname').eq(0).val(),
+                            userPwd: $('#myModalMate .firstname').eq(1).val(),
+                            userName: $('#myModalMate .firstname').eq(2).val(),
+                            honorName: $('#myModalMate .firstname').eq(3).val()
+                        },
+                        success: function (data) {
+                            var data = JSON.stringify(data);
+                            data = JSON.parse(data);
+                            if (data.status == 'ok') {
+                                alert('信息匹配成功!');
+                                $('#myModalMate .firstname').val("");
+                                $('.myModalAdvice').attr('id', 'myModalAdvice');
+                                $('#ModalAdviceClick').click();
+                            } else if (data.status == 'no') {
+                                alert('信息匹配失败，请检查!' + data.jsonTxt);
+                                return false;
+                            } else {
+                                alert(data);
+                                return false;
+                            }
+                        },
+                        error: function (data) {
+                            console.log(data.status, data.statusText);
+                        }
+                    });
+                });
+                //第二个模态框AJAX
+                var honorContent = $(
+                    '.my_glory #honorContent #honorIntroduce .honorIntroduceBox .honorContent');
+                $('.myModalAdvice #commit').on('click', function () {
+                    $.ajax({
+                        async: true,
+                        beforeSend: function () {
+                            $('.myModalAdvice #commit').text('提交中···');
+                        },
+                        complete: function () {
+                            $('.myModalAdvice #commit').text('提交');
+                        },
+                        url: "/PersonShow/AddHonorInfo",
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            honorId: honorAndAdviceId,
+                            HonorFell: $('.myModalAdvice .meSg .means #meansText').val(),
+                            HonorAdvice: $('.myModalAdvice .meSg .suggest #suggestText')
+                                .val()
+                        },
+                        success: function (dt) {
+                            var dt = JSON.stringify(dt);
+                            dt = JSON.parse(dt);
+                            if (dt.status == 'ok') {
+                                $('.myModalAdvice').removeAttr('id');
+                                //改变荣耀感悟和荣耀建议
+                                for (var j = 0; j < honorContent.length; i++) {
+                                    if ($('.my_glory #honorContent #honorIntroduce')
+                                        .eq(j).attr('index') == honorAndAdviceId) {
+                                        honorContent.find(
+                                            '.introduce .introduceTextarea').eq(
+                                            j).text($(
+                                            '.myModalAdvice .meSg .means #meansText'
+                                        ).val());
+                                        honorContent.find(
+                                            '.leading .leadingTextarea').eq(j).text(
+                                            $(
+                                                '.myModalAdvice .meSg .suggest #suggestText'
+                                            ).val());
+                                    }
+                                }
+                                $('.myModalAdvice .meSg textarea').val("");
+                                $('.myModalAdvice').modal('close');
+                            } else {
+                                alert('信息提交失败,' + dt.jsonTxt);
+                                return false;
+                            }
+                        },
+                        error: function (dt) {
+                            console.log(dt.status, dt.statusText);
+                        }
+                    });
+                });
+            }
+            return {
+                singleInfo: singleInfo,
+                honorInfo: honorInfo,
+                eventClick: eventClick,
+                infoMatching: infoMatching
+            }
+        })();
+    });
+</script>
+
+</html>

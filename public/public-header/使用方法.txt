@@ -1,0 +1,2 @@
+在页面适当位置引入css与js文件。
+在页面上写上预留标签<header id="header"></header>即可。

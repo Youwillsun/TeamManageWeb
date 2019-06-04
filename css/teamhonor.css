@@ -1,0 +1,310 @@
+ /*
+* @Author: zhuohuiyun
+* @Date:   2018-10-10 09:07:21
+* @Last Modified by:   zhuohuyun
+* @Last Modified time:
+*/
+body{
+    font-family: "微软雅黑";
+}
+
+/*
+团队荣耀
+*/
+#taemHonor{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#taemHonor .title{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 15px auto;
+    text-align: center; 
+    border-bottom: 1px solid #c0c0c0;
+}
+#taemHonor .title h3{
+    font-weight: bolder;
+}
+/* 轮播图容器 */
+#taemHonor #main_ad {
+    width:100%;
+    /* width: 1230px; */
+    margin: 10px auto;
+    /* width:100%; */
+    /* height: 385px; */
+    /* margin-top: 10px; */
+    border: 1px solid olivedrab;
+}
+
+/* 指示器小点点 */
+#taemHonor #main_ad .carousel-indicators {
+    padding-bottom: 10px;
+}
+
+/* 轮播图片 */
+#taemHonor #main_ad>.carousel-inner>.item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*  如果图片比盒子高度(410)小，填充不满盒子，所以设置background-size  */
+    background-size: cover;
+}
+
+#taemHonor #main_ad>.carousel-inner>.item>img {
+    width: 100%;
+    height: 100%
+}
+
+
+@media(max-width:1230px) {
+    #taemHonor #main_ad {
+        width: 992px;
+    }
+}
+
+@media(max-width:992px) {
+    #taemHonor #main_ad {
+        width: 768px;
+    }
+}
+/*
+荣耀名称
+*/
+#honorName {
+   width:100%;
+   margin-bottom: 15px;
+}
+#honorName > .container >.allInformation{
+    height: 340px;
+}
+#honorName .title{
+    width: 280px;
+    height: 50px;
+    line-height: 40px;
+    margin: 0 auto;
+    text-align: center; 
+}
+#honorName .title h3{
+    font-weight: bolder; 
+}
+#honorName .slogan{
+   font-size: 15px;
+   font-family: "微软雅黑";
+   margin-bottom: 8px;
+   height: 20px;
+   margin-top: 4px;
+}
+#honorName .slogan .pull-left{
+    margin-left: 10px;
+}
+#honorName .slogan .pull-right{
+    margin-right: 10px;
+}
+#honorName .content{
+    height: 235px;
+    border: 1px solid rgba(0, 0, 0, 0.425);
+    position:relative;
+}
+#honorName .content .honorInstruct{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    font-size: 17px;
+    text-align: center; 
+    margin-bottom: 5px;
+    border-bottom: 1px solid #c0c0c0;
+}
+#honorName .content .input{
+    width: 100%;
+    position: relative;
+}
+#honorName .content .introduceTextBox{
+    width: 698px;
+    height: 172px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#honorName .content .introduceTextBox .introduceText{
+    text-indent: 2em;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color: #000;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+#honorName .content .introduceTextBox:hover{
+    font-weight: bold;
+}
+
+/*参与的团队成员*/
+#parTeammember{
+    width: 100%;
+    /* height:575px; */
+    border: 1px solid orange;
+    margin-bottom: 15px;
+}
+#parTeammember > .title{
+    width: 200px;
+    height: 75px;
+    margin: 0 auto; 
+    margin-bottom: 5px;
+}
+#parTeammember > .title span{
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center; 
+    border-bottom: 1px solid #c0c0c0;
+}
+#parTeammember > .title p{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;   
+}
+
+/*参与的非团队成员*/
+#parNonteammember{
+    width:100%;
+    /* height: 300px; */
+    margin-bottom: 15px;
+    /* border:1px solid orange; */
+}
+#parNonteammember > .title{
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px; 
+    margin: 0 auto; 
+    margin-bottom: 5px;   
+}
+#parNonteammember .memberNameBox{
+    width: 1000px;
+    height: 100px;
+    background-color: #fff;
+    margin:10px auto;
+    border-radius: 5px;
+}
+#parNonteammember .memberNameBox .memberNameText{
+    font-size: 15px;
+    font-family: "微软雅黑";
+    color: #000;
+    text-indent: 2em;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+#parNonteammember .memberNameBox:hover{
+    font-weight: bold;
+}
+
+
+/*作品提交审核*/
+#parNonteammember >.worksAuditing .internLink,.time{
+    font-size: 18px;
+}
+#parNonteammember >.worksAuditing .internLink strong:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#parNonteammember >.worksAuditing .auditing{
+    text-align: center;
+}
+#parNonteammember >.worksAuditing p{
+    text-align: center;
+    font-size: 18px;
+}
+#parNonteammember >.worksAuditing button{
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    padding:0;
+    margin-top: 7px;
+    color: #fff;
+}
+
+@media(max-width:1200px){
+    /* 荣耀简介文本 */
+    #honorName .content .introduceTextBox{
+        width: 565px;
+        height: 172px;
+    }
+    #honorName .content .introduceTextBox .introduceText{
+        font-size: 12px;
+    }
+
+    /* 非本团队成员文本 */
+    #parNonteammember .memberNameBox{
+        width: 900px;
+        height: 100px;
+    }
+    #parNonteammember .memberNameBox .memberNameText{
+        font-size: 13px;
+    }
+
+    /* 三块文字 */
+    #parNonteammember >.worksAuditing .internLink,.time{
+        font-size: 15px;
+    }
+    #parNonteammember >.worksAuditing p{
+        font-size: 15px;
+    }
+}
+@media(max-width:992px){
+    /* 荣耀简介文本 */
+    #honorName .content .honorInstruct{
+        line-height: 5px;
+    }
+    #honorName .content .introduceTextBox{
+        width: 655px;
+    }
+    #honorName .content .introduceTextBox .introduceText{
+        font-size: 12px;
+    }
+
+    /* 非本团队成员文本 */
+    #parNonteammember .memberNameBox{
+        width: 750px;
+        height: 100px;
+    }
+    #parNonteammember .memberNameBox .memberNameText{
+        font-size: 12px;
+    }
+
+    /* 三块文字 */
+    #parNonteammember >.worksAuditing .internLink,.time{
+        display: none;
+    }
+    #parNonteammember >.worksAuditing p{
+        display: none;
+    }
+}
+@media(max-width:768px){
+    /* 荣耀简介 */
+    #honorName .content .honorInstruct{
+        line-height: 65px;
+    }
+    #honorName .content .introduceTextBox{
+        width: 675px;
+    }
+
+
+/* 固定宽高 */
+    #taemHonor{
+        width: 768px;
+    }
+    #honorName{
+        width: 768px;
+    }
+    #parTeammember{
+        width: 768px;
+    }
+    #parNonteammember{
+        width: 768px;
+    }
+}

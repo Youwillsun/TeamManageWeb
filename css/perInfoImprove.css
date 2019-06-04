@@ -1,0 +1,145 @@
+
+/* <--全局样式 */
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div,
+dl,
+dt,
+dd,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+select,
+textarea {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 清除浮动 */
+ .clearfix:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+
+ .clearfix {
+     zoom: 1;
+ }
+/* 全局样式--> */
+
+
+.header {
+    width: 100%;
+    height: 92px;
+    border: 1px solid #ccc;
+    box-shadow: 4px 4px 5px #888888;
+}
+
+/* 基本资料样式 */
+.basic_infor{
+    margin-top: 30px;
+}
+.basic_infor .spn_title{
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color:#333;
+    font-weight: bold;
+    display: block;
+}
+.basic_infor .personal_infor{
+    border-top: 1px solid #ccc;
+    box-shadow:0px 2px 3px #999999;
+    margin-bottom: 20px;
+}
+.per_portrait{
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    background-size: cover;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+.per_birthday .birthdayYear{
+    width: 150px;
+    height: 34px;
+    background-color: #fff;
+    margin-left: 3px;
+}
+
+/* <--自定义组件代码 */
+
+/* 自定义爱好区域复选框margin-left的值 */
+@media (min-width:0px) and (max-width:768px){
+    .data_0ffset{
+        margin-left: 16.66666667%;
+    }
+  }
+  @media (min-width:768px) {
+    .data_0ffset{
+        margin-left: 25%;
+    }
+  }
+
+  /* 自定义性别已经复选框的框度比的宽度比 */
+  @media (min-width:768px) and (max-width:991px){
+    .sex_style_left{
+       margin-left: 10%;
+    }
+  }
+  @media (min-width:991px) and (max-width:1200px){
+    .sex_style_left{
+       margin-left: 6%;
+    }
+  }
+
+  .sex_style_left .per_sex .custom-marginL{
+      margin-left: 24px;
+  }
+  .sex_style_left .grade_major .custom-marginR, .sex_style_left .per_birthday  .custom-marginR{
+    margin-left: 15px;
+  }
+  /* 自定义组件代码--> */
+
+
+  @media(max-width:768px){
+    #header{
+        width: 768px;
+    }
+    .basic_infor{
+        width: 768px;
+    }
+    
+    #footer{
+        width: 768px;
+    }
+  }

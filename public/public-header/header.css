@@ -1,0 +1,110 @@
+/*
+ * @Author: sunyongwei
+ * @Date: 2018-11-24 12:17:05 
+ * @Last Modified by: 孙永威
+ * @Last Modified time: 2018-12-26 22:55:56
+ */
+body{
+    background-color: #f4f4f4;
+}
+
+#header {
+    width: 100%;
+}
+
+#header .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#header .navbar {
+    background-color: #fff;
+    height: 100px;
+    box-shadow: 0px 0px 3px rgba(24, 20, 20, 0.225);
+}
+
+#header .navbar .navbar-header {
+    animation: hue 10s infinite linear;
+    background-color: transparent;
+    appearance: none;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#header .navbar .navbar-header .navbar-toggle{
+    margin-top: 30px;
+}
+
+@keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+.navbar-nav>li>a {
+    line-height: 68px;
+}
+
+#header .navbar li a {
+    font-size: 18px;
+    color: black;
+    font-family: Microsoft YaHei;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    color: #555;
+    background-color: #fff;
+    box-shadow: inset 0px 0px 3px rgba(24, 20, 20, 0.225);
+}
+
+@media(max-width:768px) {
+    #header{
+        width: 768px;
+    }
+    #header .navbar #btnBox {
+        float: none !important;
+    }
+}
+#header .navbar img{
+    width: 100px;
+    height: 96px;
+}
+#header .navbar h1{
+    position:absolute;
+    top: 0;
+    left: -666px;
+}
+#header #navContent #btnBox .select{
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: -1px;
+    right: 98px;
+    z-index: 1;
+    display: none;
+}
+#header #navContent #btnBox .select div{
+    width: 100%;
+    text-align: center;
+    box-shadow: inset 0px 0px 3px rgba(24, 20, 20, 0.225);
+}
+#header #navContent #btnBox .select .perInfoShow{
+    height: 50%;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+#header #navContent #btnBox .select .perInfoShow a{
+    text-decoration:none;
+}
+#header #navContent #btnBox .select .perImprove {
+    height: 50%;
+    line-height: 50px;
+}
+#header #navContent #btnBox .select .perImprove a{
+text-decoration:none;
+}

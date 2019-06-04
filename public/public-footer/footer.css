@@ -1,0 +1,63 @@
+/*
+ * @Author: sunyongwei
+ * @Date: 2018-11-24 12:44:28 
+ * @Last Modified by:   sunyongwei
+ * @Last Modified time: 2018-11-24 12:44:28 
+ */
+
+#footer {
+    width: 100%;
+    background-color: #ccc;
+    margin-top:10px;
+}
+
+#footer .titleBox {
+    padding-right: 0px;
+}
+
+#footer .titleBox .title {
+    margin-top: 28px;
+    font-family: Microsoft YaHei;
+    color: #000;
+}
+
+#footer .titleBox .title .titleF {
+    font-size: 30px;
+    font-family: "华文琥珀";
+    margin-bottom: 0;
+}
+
+#footer .titleBox .title .titleS {
+    font-size: 15px;
+}
+
+#footer .subtitleBox .productService {
+    line-height: 10px;
+}
+
+#footer .subtitleBox a {
+    font-family: Microsoft YaHei;
+    color: #000;
+    font-size: 13px;
+}
+
+#footer .subtitleBox dt {
+    font-family: Microsoft YaHei;
+    color: #000;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+#footer .subtitleBox dd {
+    margin-top: 5px;
+}
+
+#footer .container .col-md-3 {
+    width: 24%;
+}
+
+@media(max-width:768px) {
+    #footer {
+        width: 768px;
+    }
+}
